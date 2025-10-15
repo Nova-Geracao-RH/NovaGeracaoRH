@@ -48,18 +48,13 @@ body {
   }
 }
     
-/* Cards Desktop: evitar espaçamento exagerado */
+/* DESKTOP: força texto sem justificar nos cards */
 @media (min-width: 769px) {
   .cards-grid .card p {
-    text-align: left;    /* remove justificação e espaçamento irregular */
-    line-height: 1.4;    /* ajusta espaçamento entre linhas */
-    margin-bottom: 10px; /* espaço entre parágrafos */
-    word-spacing: normal; /* garante que não haja espaçamento extra entre palavras */
-  }
-
-  .cards-grid .card h2 {
-    text-align: left;    /* títulos também alinhados à esquerda */
-    margin-bottom: 8px;
+    text-align: left !important;   /* não justificar */
+    line-height: 1.4 !important;   /* espaçamento entre linhas normal */
+    margin: 0 !important;          /* remove espaçamento extra */
+    word-spacing: normal !important;
   }
 }
 
