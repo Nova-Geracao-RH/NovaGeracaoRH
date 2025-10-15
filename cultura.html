@@ -49,14 +49,16 @@ body {
 }
     
 /* Cards Desktop: evitar espaçamento exagerado */
+/* Ajuste de espaçamento para desktop nos cards de valores */
 @media (min-width: 769px) {
-  .card p,
-  .card-mvv p {
-    text-align: left;       /* não justificar */
-    word-spacing: -1px;
-    letter-spacing: normal;
-    line-height: 1.5;       /* menos espaçamento entre linhas */
-    margin-bottom: 15px;    /* espaço entre parágrafos, se houver mais de um */
+  .cards-grid .card p {
+    line-height: 1.4;      /* espaçamento entre linhas menor e mais natural */
+    margin-bottom: 10px;   /* distância entre parágrafos mais curta */
+    font-size: 1.05rem;    /* mantém legível, ajustável se quiser menor */
+  }
+
+  .cards-grid .card h2 {
+    margin-bottom: 8px;    /* espaço entre título e texto mais compacto */
   }
 }
 
