@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LGPD - Nova Geração RH</title>
+  <meta name="description" content="Saiba como a Nova Geração RH garante proteção de dados pessoais de candidatos e empresas, seguindo a LGPD e práticas éticas de recrutamento." />
+  <meta name="keywords" content="LGPD, Proteção de Dados, Privacidade, Recrutamento Ético, RH, Nova Geração RH, Lei Geral de Proteção de Dados, Segurança de Dados" />
+  <link rel="icon" type="image/png" href="lgoogle.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LGPD - Nova Geração RH" />
+  <meta property="og:description" content="Compromisso com a LGPD e práticas éticas de recrutamento. Protegemos dados pessoais de candidatos e empresas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="link-da-imagem.jpg" />
+  <meta property="og:url" content="https://www.seusite.com.br/lgpd" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LGPD - Nova Geração RH" />
+  <meta name="twitter:description" content="Conheça nosso compromisso com a Lei Geral de Proteção de Dados e práticas éticas de recrutamento." />
+  <meta name="twitter:image" content="link-da-imagem.jpg" />
+  <style>
+/* Base do layout original */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  padding-top: 170px;
+}
+
+body.dark-mode {
+  background-color: #000004;
+  color: #ffffff;
+}
+
+/* Header fixo */
+.header-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header {
+  background-color: #EFEFEF;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  color: #EFEFEF;
+  font-size: 1.8rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.header-left img {
+  height: 280px;
+  width: auto;
+  display: block;
+  margin-top: 11px;
+}
+
+.header-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: auto;
+  text-align: center;
+}
+
+.titulo-desktop {
+  display: block;
+  font-size: 2.8rem;
+  color: #013241;
+  font-weight: bold;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+
+.titulo-mobile {
+  display: none;
+}
+
+#darkModeToggle {
+  background: none;
+  border: 2px solid #013241;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #013241;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+/* Navegação */
+nav {
+  background-color: #EFEFEF !important;
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+nav a:hover,
+.dropdown:hover > a {
+  color: #013241;
+  font-weight: 700;
+  background-color: #EFEFEF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+nav a.ativo {
+  color: #000000;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #EFEFEF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-align: left;
+  color: #009AB2;
+  font-weight: normal;
+  background-color: #EFEFEF;
+}
+
+.dropdown-content a:hover {
+  background-color: #EFEFEF;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hero Section LGPD */
+.hero-lgpd {
+  background: linear-gradient(135deg, #009AB2 0%, #013241 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-lgpd::before {
+  content: '🔒';
+  position: absolute;
+  font-size: 15rem;
+  opacity: 0.1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-lgpd h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-lgpd p {
+  font-size: 1.3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container Principal */
+.lgpd-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Cards de Conteúdo */
+.content-card {
+  background: #EFEFEF;
+  border-radius: 15px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border-left: 5px solid #009AB2;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.content-card h2 {
+  color: #013241;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.content-card h3 {
+  color: #009AB2;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.content-card p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.icon-large {
+  font-size: 2.5rem;
+}
+
+/* Lista Moderna */
+.modern-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.modern-list li {
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  background: rgba(0, 154, 178, 0.05);
+  border-left: 4px solid #009AB2;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.modern-list li:hover {
+  background: rgba(0, 154, 178, 0.1);
+  transform: translateX(5px);
+}
+
+.modern-list li strong {
+  color: #013241;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+/* Destaque de Compromisso */
+.commitment-box {
+  background: linear-gradient(135deg, #009AB2 0%, #013241 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.commitment-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.commitment-box p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Grid de Princípios */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 40px 0;
+}
+
+.principle-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 4px solid #009AB2;
+}
+
+.principle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.principle-card .emoji {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.principle-card h4 {
+  color: #013241;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.principle-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Links Oficiais */
+.official-links {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 0;
+}
+
+.official-links h3 {
+  color: #013241;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.official-links a {
+  display: inline-block;
+  color: #009AB2;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 25px;
+  background: white;
+  border-radius: 8px;
+  margin: 10px 10px 10px 0;
+  transition: all 0.3s ease;
+  border: 2px solid #009AB2;
+}
+
+.official-links a:hover {
+  background: #009AB2;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,154,178,0.3);
+}
+
+/* Alerta Ético */
+.ethics-alert {
+  background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 0;
+  box-shadow: 0 8px 20px rgba(201, 42, 42, 0.3);
+}
+
+.ethics-alert h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.ethics-alert p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Footer */
+footer {
+  background-color: #EFEFEF;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #007b8a;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+body.dark-mode footer {
+  background-color: #000004;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+footer small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* Modo Escuro */
+body.dark-mode .content-card {
+  background-color: #1a1a1a;
+  border-left-color: #009AB2;
+}
+
+body.dark-mode .content-card h2 {
+  color: #009AB2;
+}
+
+body.dark-mode .content-card h3 {
+  color: #00c3de;
+}
+
+body.dark-mode .content-card p {
+  color: #ccc;
+}
+
+body.dark-mode .modern-list li {
+  background: rgba(0, 154, 178, 0.1);
+  color: #ccc;
+}
+
+body.dark-mode .modern-list li strong {
+  color: #009AB2;
+}
+
+body.dark-mode .principle-card {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .principle-card h4 {
+  color: #009AB2;
+}
+
+body.dark-mode .principle-card p {
+  color: #aaa;
+}
+
+body.dark-mode .official-links {
+  background-color: #0a0a0a;
+}
+
+body.dark-mode .official-links h3 {
+  color: #009AB2;
+}
+
+body.dark-mode .official-links a {
+  background-color: #1a1a1a;
+  color: #009AB2;
+}
+
+body.dark-mode .official-links a:hover {
+  background-color: #009AB2;
+  color: white;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  body {
+    padding-top: 0;
+  }
+
+  .titulo-desktop {
+    display: none !important;
+  }
+  
+  .titulo-mobile {
+    display: block !important;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .header-left img {
+    display: block;
+    margin: 30px auto 20px auto;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+  }
+
+  .header-title-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.1rem 0;
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 3px 5px;
+  }
+
+  #darkModeToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+  }
+
+  .hero-lgpd {
+    padding: 40px 20px;
+    margin-top: 165px;
+  }
+
+  .hero-lgpd h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-lgpd p {
+    font-size: 1rem;
+  }
+
+  .lgpd-container {
+    padding: 30px 15px;
+  }
+
+  .content-card {
+    padding: 25px 20px;
+  }
+
+  .content-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .commitment-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.plataformas-sociais {
+  margin-top: 30px;
+  text-align: center;
+  gap: 2px;
+}
+
+.plataformas-sociais a {
+  display: inline-block;
+  margin: 0 15px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  filter: none !important;
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+.plataformas-sociais a img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  filter: none !important;
+}
+
+@media (max-width: 600px) {
+  .plataformas-sociais a img {
+    width: 30px;
+    height: 30px;
+    margin: -5px;
+  }
+
+}
+</style>
+</head>
+<body>
+
+<!-- Menu de navegação fixo -->
+<div class="header-nav-container">
+<header>
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+  <div class="header-left">
+    <img src="lg.png" alt="Logo Nova Geração RH" />
+    <div class="header-title-container">
+      <h1 class="titulo-desktop">Conectando Talentos</h1>
+    </div>
+  </div>
+</header>
+
+<nav>
+    <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
+    <div class="dropdown-content">
+      <a href="global.html">Página Global</a>
+      <a href="index.html">Início</a>
+      <a href="home.html">Bem-vindos</a>
+      <a href="cultura.html">Cultura</a>
+    </div>
+  </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">CARREIRA</a>
+      <div class="dropdown-content">
+        <a href="candidato.html">Candidato</a>
+        <a href="vagas.html">Vagas</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">ATENDIMENTO</a>
+      <div class="dropdown-content">
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+
+<div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
+      <div class="dropdown-content">
+        <a href="informacoes.html">Inforações Gerais</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="lgbt.html">LGBT+</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
+        <a href="pcd.html">Pessoas com deficiência</a>
+      </div>
+    </div>
+
+ <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
+      <div class="dropdown-content">
+        <a href="blog.html">Blog</a>
+        <a href="facebook.html">Comunidade Facebook</a>
+        <a href="comunidade.html">Comunidade WhatsApp</a>
+      </div>
+    </div>
+
+</nav>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-lgpd">
+  <h1>Lei Geral de Proteção de Dados</h1>
+  <p>Seus dados são sagrados. Sua privacidade é inegociável. Nosso compromisso é transparente.</p>
+</section>
+
+<!-- Conteúdo Principal -->
+<div class="lgpd-container">
+
+  <!-- O que é LGPD -->
+  <div class="content-card">
+    <h2><span class="icon-large">🛡️</span> O que é a LGPD?</h2>
+    <p>A <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</strong> representa um marco histórico na proteção dos direitos digitais no Brasil. Inspirada na GDPR europeia, essa legislação revolucionou a forma como empresas e organizações lidam com informações pessoais.</p>
+    
+    <p>Imagine seus dados como extensões da sua identidade: seu nome, CPF, e-mail, histórico profissional, preferências e até mesmo aquele currículo que você enviou para uma vaga. Tudo isso é protegido pela LGPD, que estabelece regras claras sobre coleta, armazenamento, tratamento e compartilhamento dessas informações.</p>
+
+    <p>A lei entrou em vigor em setembro de 2020, criando um novo paradigma onde <strong>você tem o controle</strong>. Não somos mais apenas "usuários" passivos - somos titulares de dados com direitos garantidos por lei.</p>
+  </div>
+
+  <!-- Seus Direitos -->
+  <div class="content-card">
+    <h2><span class="icon-large">⚖️</span> Seus Direitos como Titular</h2>
+    <p>A LGPD não é apenas burocracia corporativa. É sobre <strong>empoderamento digital</strong>. Você possui direitos fundamentais que podem (e devem) ser exercidos:</p>
+    
+    <ul class="modern-list">
+      <li>
+        <strong>🔍 Direito de Acesso</strong>
+        Solicite e receba uma cópia completa de todos os dados que mantemos sobre você. Transparência total, sem mistérios.
+      </li>
+      <li>
+        <strong>✏️ Direito de Correção</strong>
+        Identificou alguma informação incorreta ou desatualizada? Você pode solicitar a correção imediata.
+      </li>
+      <li>
+        <strong>🗑️ Direito de Exclusão</strong>
+        Quando não há mais necessidade de manter seus dados, você pode solicitar a eliminação completa.
+      </li>
+      <li>
+        <strong>📋 Direito de Portabilidade</strong>
+        Seus dados são portáteis! Você pode solicitar a transferência para outro prestador de serviços.
+      </li>
+      <li>
+        <strong>🚫 Direito de Oposição</strong>
+        Não concorda com determinado tratamento? Você tem o direito de se opor ao processamento de seus dados.
+      </li>
+      <li>
+        <strong>📊 Direito de Informação</strong>
+        Saber com quem compartilhamos seus dados, para que finalidade e como os protegemos.
+      </li>
+      <li>
+        <strong>🔐 Direito de Revogação do Consentimento</strong>
+        Mudou de ideia? Você pode retirar seu consentimento a qualquer momento.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Nosso Compromisso Ético -->
+  <div class="commitment-box">
+    <h2>💎 Nosso Compromisso Inegociável</h2>
+    <p><strong>Nós NÃO vamos nos vender. Jamais.</strong></p>
+    <p>Vivemos em uma era onde dados são chamados de "novo petróleo". Mas para nós, seus dados não são commodities. São responsabilidades sagradas.</p>
+    <p>Rejeitamos veementemente práticas antiéticas que mancham o mercado de recrutamento. Nossa promessa é cristalina e irreversível.</p>
+  </div>
+
+  <!-- Práticas que NUNCA faremos -->
+  <div class="content-card">
+    <h2><span class="icon-large">🚨</span> O que NUNCA Faremos</h2>
+    
+    <h3>❌ Discriminação em Processos Seletivos</h3>
+    <p>Repudiamos TODAS as formas de preconceito e discriminação. Nossos processos seletivos são construídos sobre pilares de <strong>equidade, diversidade e mérito genuíno</strong>:</p>
+    
+    <ul class="modern-list">
+      <li>
+        <strong>Idade:</strong> Competência não tem data de validade. Valorizamos experiência e potencial igualmente.
+      </li>
+      <li>
+        <strong>Gênero e Identidade:</strong> Todas as identidades de gênero são respeitadas e celebradas. Promovemos ambientes inclusivos.
+      </li>
+      <li>
+        <strong>Orientação Sexual:</strong> O amor é livre, e nossos processos seletivos também. Zero tolerância para LGBTfobia.
+      </li>
+      <li>
+        <strong>Raça e Etnia:</strong> Combatemos ativamente o racismo estrutural e promovemos a diversidade racial.
+      </li>
+      <li>
+        <strong>Religião:</strong> Suas crenças espirituais são pessoais e invioláveis. Não discriminamos por fé ou filosofia de vida.
+      </li>
+      <li>
+        <strong>Origem Social:</strong> Todos merecem oportunidades iguais, independentemente de classe social ou background econômico.
+      </li>
+      <li>
+        <strong>Deficiência:</strong> Acessibilidade e inclusão são prioridades. Pessoas com deficiência têm todo nosso suporte.
+      </li>
+      <li>
+        <strong>Estado Civil e Configuração Familiar:</strong> Sua vida pessoal é sua. Não fazemos perguntas invasivas sobre família ou estado civil.
+      </li>
+    </ul>
+
+    <h3>🔒 Antecedentes Criminais</h3>
+    <p>Entendemos que o sistema de justiça é complexo e que a reabilitação é um direito humano fundamental. Nossa posição é clara:</p>
+    <ul class="modern-list">
+      <li>Não solicitamos certidões de antecedentes criminais a menos que seja <strong>exigência legal específica</strong> para determinada função (cargos de segurança, trabalho com menores, etc.)</li>
+      <li>Acreditamos em <strong>segundas chances</strong> e no direito à ressocialização</li>
+      <li>Quando necessário, tratamos essa informação com máxima confidencialidade e sensibilidade</li>
+      <li>Não julgamos candidatos com base em erros do passado que não têm relação com a função pretendida</li>
+    </ul>
+
+    <h3>💰 Comercialização de Dados</h3>
+    <p><strong>Seus dados nunca serão vendidos, alugados ou comercializados.</strong> Ponto final.</p>
+    <p>Não participamos de:</p>
+    <ul class="modern-list">
+      <li>Venda de listas de candidatos para terceiros</li>
+      <li>Compartilhamento de dados pessoais para fins comerciais ou publicitários</li>
+      <li>Parcerias duvidosas que comprometam sua privacidade</li>
+      <li>Uso de dados para perfilamento abusivo ou discriminatório</li>
+    </ul>
+  </div>
+
+  <!-- Princípios da LGPD -->
+  <div class="content-card">
+    <h2><span class="icon-large">📜</span> Princípios que Guiam Nossa Atuação</h2>
+    <p>A LGPD estabelece 10 princípios fundamentais que norteiam todas as nossas operações:</p>
+    
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="emoji">🎯</div>
+        <h4>Finalidade</h4>
+        <p>Coletamos dados apenas para propósitos legítimos, específicos e informados a você.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">🔄</div>
+        <h4>Adequação</h4>
+        <p>O tratamento deve ser compatível com as finalidades informadas. Sem surpresas.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">⚖️</div>
+        <h4>Necessidade</h4>
+        <p>Coletamos apenas o mínimo necessário. Sem excessos ou dados irrelevantes.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">🔓</div>
+        <h4>Livre Acesso</h4>
+        <p>Você pode consultar seus dados de forma gratuita e facilitada.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">✅</div>
+        <h4>Qualidade</h4>
+        <p>Mantemos dados exatos, claros e atualizados.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">💡</div>
+        <h4>Transparência</h4>
+        <p>Informações claras e acessíveis sobre o tratamento de dados.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">🛡️</div>
+        <h4>Segurança</h4>
+        <p>Medidas técnicas e administrativas para proteger seus dados.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">🚫</div>
+        <h4>Prevenção</h4>
+        <p>Adotamos medidas para prevenir danos relacionados aos seus dados.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">🚷</div>
+        <h4>Não Discriminação</h4>
+        <p>Proibição de tratamento para fins discriminatórios, ilícitos ou abusivos.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">📝</div>
+        <h4>Responsabilização</h4>
+        <p>Demonstramos e comprovamos o cumprimento das normas de proteção de dados.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Como Protegemos -->
+  <div class="content-card">
+    <h2><span class="icon-large">🔐</span> Como Protegemos Seus Dados</h2>
+    <p>Segurança não é opcional. É nossa obsessão diária. Implementamos múltiplas camadas de proteção:</p>
+    
+    <ul class="modern-list">
+      <li>
+        <strong>Criptografia de Ponta a Ponta:</strong> Seus dados são criptografados durante transmissão e armazenamento.
+      </li>
+      <li>
+        <strong>Controle de Acesso Restrito:</strong> Apenas profissionais autorizados e treinados têm acesso aos dados pessoais.
+      </li>
+      <li>
+        <strong>Auditorias Regulares:</strong> Realizamos verificações constantes de segurança e conformidade.
+      </li>
+      <li>
+        <strong>Backups Seguros:</strong> Cópias de segurança protegidas e testadas regularmente.
+      </li>
+      <li>
+        <strong>Políticas de Retenção:</strong> Mantemos dados apenas pelo tempo necessário e os descartamos de forma segura.
+      </li>
+      <li>
+        <strong>Treinamento Contínuo:</strong> Nossa equipe é constantemente capacitada sobre proteção de dados e privacidade.
+      </li>
+      <li>
+        <strong>Resposta a Incidentes:</strong> Protocolos claros para responder rapidamente a qualquer incidente de segurança.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Bases Legais -->
+  <div class="content-card">
+    <h2><span class="icon-large">📋</span> Bases Legais para Tratamento</h2>
+    <p>Não tratamos dados aleatoriamente. Toda operação se baseia em fundamentos legais sólidos:</p>
+    
+    <ul class="modern-list">
+      <li>
+        <strong>Consentimento:</strong> Quando você autoriza expressamente o uso de seus dados.
+      </li>
+      <li>
+        <strong>Execução de Contrato:</strong> Dados necessários para processos seletivos e relações de trabalho.
+      </li>
+      <li>
+        <strong>Obrigação Legal:</strong> Quando a lei exige o tratamento (impostos, registros trabalhistas, etc.).
+      </li>
+      <li>
+        <strong>Legítimo Interesse:</strong> Para situações que beneficiam ambas as partes, sempre respeitando seus direitos.
+      </li>
+      <li>
+        <strong>Exercício de Direitos:</strong> Quando necessário para garantir direitos em processos jurídicos.
+      </li>
+      <li>
+        <strong>Proteção da Vida:</strong> Em situações de emergência que envolvam saúde ou segurança.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Alerta Ético -->
+  <div class="ethics-alert">
+    <h3>⚠️ Denuncie Práticas Abusivas</h3>
+    <p>Se você identificar ou sofrer discriminação em processos seletivos, saiba que existem canais oficiais de denúncia:</p>
+    <p><strong>• Ministério Público do Trabalho (MPT)</strong><br>
+    <strong>• Autoridade Nacional de Proteção de Dados (ANPD)</strong><br>
+    <strong>• Ministério do Trabalho e Emprego</strong><br>
+    <strong>• Defensoria Pública</strong></p>
+    <p>Práticas discriminatórias são <strong>CRIME</strong> e devem ser combatidas.</p>
+  </div>
+
+  <!-- Links Oficiais -->
+  <div class="official-links">
+    <h3>🔗 Links Oficiais da Legislação</h3>
+    <p>Conheça seus direitos diretamente na fonte:</p>
+    
+    <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer">
+      📜 Lei nº 13.709/2018 - Texto Completo da LGPD
+    </a>
+    
+    <a href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer">
+      🏛️ ANPD - Autoridade Nacional de Proteção de Dados
+    </a>
+    
+    <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm#art5" target="_blank" rel="noopener noreferrer">
+      ⚖️ LGPD Art. 5º - Definições e Conceitos
+    </a>
+    
+    <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm#art18" target="_blank" rel="noopener noreferrer">
+      🛡️ LGPD Art. 18º - Direitos do Titular
+    </a>
+    
+    <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm#art6" target="_blank" rel="noopener noreferrer">
+      📖 LGPD Art. 6º - Princípios
+    </a>
+    
+    <a href="https://www.gov.br/trabalho-e-previdencia/pt-br" target="_blank" rel="noopener noreferrer">
+      💼 Ministério do Trabalho e Emprego
+    </a>
+    
+    <a href="https://mpt.mp.br/" target="_blank" rel="noopener noreferrer">
+      ⚖️ Ministério Público do Trabalho
+    </a>
+  </div>
+
+  <!-- Como Exercer Direitos -->
+  <div class="content-card">
+    <h2><span class="icon-large">📢</span> Como Exercer Seus Direitos</h2>
+    <p>Nada de burocracia kafkiana. Tornar seus direitos acessíveis é nossa obrigação:</p>
+    
+    <h3>📧 Entre em Contato Conosco</h3>
+    <ul class="modern-list">
+      <li>
+        <strong>E-mail do Encarregado de Dados (DPO):</strong> dpo@novaGeracaoRH.com
+      </li>
+      <li>
+        <strong>Telefone:</strong> (51) 99338-1495 | (51) 99697-6579
+      </li>
+      <li>
+        <strong>Prazo de Resposta:</strong> Até 15 dias úteis (podendo ser prorrogado por mais 15 dias se necessário)
+      </li>
+      <li>
+        <strong>Custo:</strong> GRATUITO (salvo casos excepcionais previstos em lei)
+      </li>
+    </ul>
+
+    <h3>📝 O que Informar na Solicitação</h3>
+    <p>Para agilizar seu atendimento, inclua:</p>
+    <ul class="modern-list">
+      <li>Seu nome completo e documento de identificação</li>
+      <li>Qual direito você deseja exercer (acesso, correção, exclusão, etc.)</li>
+      <li>Informações específicas sobre o contexto (processo seletivo, vaga, período, etc.)</li>
+      <li>Forma de contato preferencial para resposta</li>
+    </ul>
+  </div>
+
+  <!-- Compromisso Final -->
+  <div class="commitment-box">
+    <h2>🤝 Nossa Palavra Final</h2>
+    <p>A <strong>Nova Geração RH</strong> não é apenas um nome. É uma filosofia. Representamos uma ruptura com práticas antigas, discriminatórias e antiéticas que ainda mancham o mercado de trabalho.</p>
+    
+    <p><strong>Nosso compromisso é triplo:</strong></p>
+    <p>✅ Proteger seus dados com seriedade absoluta<br>
+    ✅ Combater ativamente toda forma de discriminação<br>
+    ✅ Promover um mercado de trabalho mais justo, diverso e humano</p>
+    
+    <p>Seus dados estão seguros. Sua dignidade está protegida. Sua confiança é merecida.</p>
+    
+    <p style="margin-top: 30px; font-size: 1.3rem; font-weight: bold;">
+      💙 Conectando Talentos com Ética, Transparência e Respeito 💙
+    </p>
+  </div>
+
+  <!-- Atualizações -->
+  <div class="content-card">
+    <h2><span class="icon-large">🔄</span> Atualizações desta Política</h2>
+    <p>A legislação evolui, as tecnologias mudam, e nossas práticas se aprimoram constantemente. Mantemos esta página sempre atualizada e informamos sobre mudanças significativas.</p>
+    
+    <p><strong>Última atualização:</strong> Outubro de 2025</p>
+    
+    <p>Recomendamos visitar esta página periodicamente para se manter informado sobre como protegemos e respeitamos seus dados.</p>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p><strong>CNPJ:</strong>-/p>
+  <p><strong>Telefone:</strong>(51) 99697-6579</p>
+  <p><strong>E-mail:</strong> Exemplo@gmail.com</p>
+  <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
+
+<!-- Ícones de redes sociais -->
+<div class="plataformas-sociais">
+  <a href="https://www.facebook.com" target="_blank" class="social facebook">
+    <img src="facebook1.png" alt="Facebook">
+  </a>
+  <a href="https://www.instagram.com" target="_blank" class="social instagram">
+    <img src="instagram1.png" alt="Instagram">
+  </a>
+  <a href="https://www.linkedin.com" target="_blank" class="social linkedin">
+    <img src="linkedin1.png" alt="LinkedIn">
+  </a>
+  <a href="https://www.youtube.com" target="_blank" class="social youtube">
+    <img src="youtube1.png" alt="YouTube">
+  </a>
+</div>
+</footer>
+
+<style>
+
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+</style>
+
+  </script>
+<!-- Botão flutuante principal com ícone -->
+<div class="floatb-container">
+  <button class="floatb" id="floatb">
+    <img src="user.png" alt="Principal" width="30">
+  </button>
+
+  <!-- Botões escondidos inicialmente -->
+  <div class="floatb-options" id="floatbOptions">
+    <a href="https://wa.me/SEU_NUMERO1" target="_blank" class="floatb-btn">
+      <img src="whatsapp.png" alt="WhatsApp 1" width="24"> 
+    </a>
+    <a href="https://wa.me/SEU_NUMERO2" target="_blank" class="floatb-btn">
+      <img src="whatsapp2.png" alt="WhatsApp 2" width="24"> 
+    </a>
+    <a href="tel:+5511999999999" class="floatb-btn">
+      <img src="ligação.png" alt="Ligar" width="24"> 
+    </a>
+    <a href="https://t.me/SEU_USUARIO" target="_blank" class="floatb-btn">
+      <img src="telegrama.png" alt="Telegram" width="24"> 
+    </a>
+  </div>
+</div>
+
+<style>
+.floatb-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Botão principal */
+.floatb {
+  background-color: #009AB2;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  outline: none;            /* remove o contorno de foco */
+  border: none;             /* remove qualquer borda */
+}
+
+/* Remove foco azul ao clicar ou tabular */
+.floatb:focus {
+  outline: none !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important; /* mantém sombra normal */
+  
+}
+.floatb:hover {
+  background-color: #007b8a;
+}
+.floatb {
+  outline: none !important;
+}
+
+
+.floatb:hover {
+  background-color: #007b8a;
+}
+
+.floatb-options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.floatb-options.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.floatb-btn {
+  background-color: #009AB2;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;      /* centraliza verticalmente */
+  justify-content: center;  /* centraliza horizontalmente */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.floatb-btn:hover {
+  background-color: #007b8a;
+}
+.floatb img {
+  width: 40px !important;  /* força largura */
+  height: 40px !important; /* força altura */
+}
+
+.floatb-btn img {
+  display: block;
+}
+</style>
+
+
+<script>
+const floatb = document.getElementById('floatb');
+const floatbOptions = document.getElementById('floatbOptions');
+let timeout;
+
+floatb.addEventListener('click', () => {
+  // Mostra os botões
+  floatbOptions.classList.add('show');
+
+  // Limpa qualquer timeout anterior
+  clearTimeout(timeout);
+
+  // Recolhe os botões após 3 segundos
+  timeout = setTimeout(() => {
+    floatbOptions.classList.remove('show');
+  }, 3000);
+});
+</script>
+
+<script>
+    const contactBtn = document.getElementById('contactBtn');
+    const contactFloat = document.querySelector('.contact-float');
+    contactBtn.addEventListener('click', () => contactFloat.classList.toggle('active'));
+</script>
+
+<script>
+function toggleDarkMode() {
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  if (isDark) {
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+}
+
+window.onload = () => {
+  const theme = localStorage.getItem("theme");
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  if (theme === "dark") {
+    body.classList.add("dark-mode");
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  if (dropdownToggle && dropdownContent) {
+    dropdownToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      dropdownContent.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!dropdownToggle.contains(e.target) && !dropdownContent.contains(e.target)) {
+        dropdownContent.classList.remove("show");
+      }
+    });
+  }
+});
+
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+

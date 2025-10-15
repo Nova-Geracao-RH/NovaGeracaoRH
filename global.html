@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Global - RH Conectado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 15px 20px 10px;
+            position: relative;
+            z-index: 10;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 1em;
+            font-weight: 600;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-home {
+            background: linear-gradient(135deg, #f5b7b7 0%, #ee8045 100%);
+            
+        }
+
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
+            background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
+        }
+
+        .btn-enter {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+        }
+
+        .btn-enter:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 107, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        #globe-container {
+            flex: 1;
+            width: 100%;
+            max-width: 100vw;
+            position: relative;
+            min-height: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        }
+
+        #globe-container canvas {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media(max-width:768px) {
+            h1 { font-size: 1.8em; margin-bottom: 6px; }
+            .subtitle { font-size: 0.95em; margin-bottom: 8px; }
+            .btn { padding: 8px 24px; font-size: 0.9em; }
+            .header { padding: 12px 15px 8px; }
+        }
+       
+        @media(max-width:480px) {
+            h1 { font-size: 1.5em; margin-bottom: 5px; }
+            .subtitle { font-size: 0.85em; margin-bottom: 6px; }
+            .btn { padding: 7px 20px; font-size: 0.8em; }
+            .buttons-container { gap: 10px; }
+            .header { padding: 10px 12px 6px; }
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Networking Global</h1>
+        <p class="subtitle">Conectando talentos ao redor do mundo</p>
+        <div class="buttons-container">
+            <a href="index.html" class="btn btn-home">Voltar Inicial</a>
+            <a href="home.html" class="btn btn-enter">Página Inicial</a>
+        </div>
+    </div>
+
+    <div id="globe-container"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        let scene, camera, renderer, globe, particles, connections;
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+        let rotationVelocity = { x: 0, y: 0 };
+
+        function init() {
+            const container = document.getElementById('globe-container');
+            
+            scene = new THREE.Scene();
+
+            // Calcula dimensões seguras
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+            const size = Math.min(containerWidth * 0.95, containerHeight * 0.95);
+
+            camera = new THREE.PerspectiveCamera(
+                45, 
+                size / size, 
+                0.1, 
+                1000
+            );
+            
+            // Ajusta zoom baseado no tamanho da tela
+            if (window.innerWidth <= 480) {
+                camera.position.z = 22; // Mobile pequeno - bem afastado
+            } else if (window.innerWidth <= 768) {
+                camera.position.z = 18; // Tablet
+            } else {
+                camera.position.z = 15; // Desktop
+            }
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(size, size);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+            container.appendChild(renderer.domElement);
+
+            createRealisticGlobe();
+            createParticles();
+            createConnections();
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+            scene.add(ambientLight);
+
+            const sunLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            sunLight.position.set(5, 3, 5);
+            scene.add(sunLight);
+
+            const fillLight = new THREE.DirectionalLight(0xffffff, 0.3);
+            fillLight.position.set(-5, -3, -5);
+            scene.add(fillLight);
+
+            setupEventListeners();
+            animate();
+        }
+
+        function createRealisticGlobe() {
+            const globeGroup = new THREE.Group();
+            
+            const sphereGeometry = new THREE.SphereGeometry(5, 128, 128);
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = 2048;
+            canvas.height = 1024;
+            const ctx = canvas.getContext('2d');
+            
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#0D47A1');
+            gradient.addColorStop(0.5, '#1976D2');
+            gradient.addColorStop(1, '#0D47A1');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < 50000; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const size = Math.random() * 3;
+                const opacity = Math.random() * 0.3;
+                ctx.fillStyle = `rgba(25, 118, 210, ${opacity})`;
+                ctx.fillRect(x, y, size, size);
+            }
+            
+            const oceanTexture = new THREE.CanvasTexture(canvas);
+            
+            const sphereMaterial = new THREE.MeshPhongMaterial({
+                map: oceanTexture,
+                shininess: 80,
+                specular: 0x4FC3F7,
+                bumpScale: 0.02
+            });
+            
+            const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+            globeGroup.add(sphere);
+
+            const continentsData = getContinentsData();
+
+            continentsData.forEach(continent => {
+                const points = continent.points.map(p => 
+                    convertLatLonToVector3(p[0], p[1], 5.06)
+                );
+                
+                if (points.length < 3) return;
+                
+                const geometry = new THREE.BufferGeometry();
+                const vertices = [];
+                const indices = [];
+                const colors = [];
+                
+                const center = new THREE.Vector3();
+                points.forEach(p => center.add(p));
+                center.divideScalar(points.length);
+                
+                const gridSize = 20;
+                const allPoints = [];
+                
+                points.forEach((point, idx) => {
+                    const noise = SimplexNoise(point.x * 2, point.y * 2, point.z * 2);
+                    const relief = 0.02 + Math.abs(noise) * 0.08;
+                    const finalPoint = point.clone().normalize().multiplyScalar(5.06 + relief);
+                    allPoints.push({ point: finalPoint, relief, noise, isBorder: true });
+                });
+                
+                for (let i = 1; i < gridSize - 1; i++) {
+                    for (let j = 1; j < gridSize - 1; j++) {
+                        const u = i / (gridSize - 1);
+                        const v = j / (gridSize - 1);
+                        
+                        const point = new THREE.Vector3();
+                        const idx1 = Math.floor(u * (points.length - 1));
+                        const idx2 = Math.floor(v * (points.length - 1));
+                        
+                        point.lerpVectors(points[idx1], center, 0.4);
+                        point.lerp(points[idx2], 0.6);
+                        
+                        const noise = SimplexNoise(point.x * 2, point.y * 2, point.z * 2);
+                        const relief = 0.02 + Math.abs(noise) * 0.08;
+                        
+                        point.normalize().multiplyScalar(5.06 + relief);
+                        allPoints.push({ point, relief, noise, isBorder: false });
+                    }
+                }
+                
+                allPoints.forEach(({point, relief, noise}) => {
+                    vertices.push(point.x, point.y, point.z);
+                    
+                    let color;
+                    const altitude = relief / 0.1;
+                    
+                    if (altitude > 0.8) {
+                        color = new THREE.Color(0xF5F5F5);
+                    } else if (altitude > 0.65) {
+                        color = new THREE.Color(0x9E9E9E);
+                    } else if (altitude > 0.5) {
+                        color = new THREE.Color(0xA1887F);
+                    } else if (altitude > 0.35) {
+                        color = new THREE.Color(noise > 0 ? 0xAED581 : 0xBCAAA4);
+                    } else if (altitude > 0.22) {
+                        color = new THREE.Color(0x9CCC65);
+                    } else {
+                        color = new THREE.Color(0x66BB6A);
+                    }
+                    
+                    colors.push(color.r, color.g, color.b);
+                });
+                
+                const borderCount = points.length;
+                for (let i = 0; i < allPoints.length - borderCount; i++) {
+                    const idx = borderCount + i;
+                    const borderIdx = i % borderCount;
+                    const nextBorderIdx = (i + 1) % borderCount;
+                    
+                    if (idx + 1 < allPoints.length) {
+                        indices.push(borderIdx, idx, idx + 1);
+                        indices.push(borderIdx, idx + 1, nextBorderIdx);
+                    }
+                }
+                
+                for (let i = borderCount; i < allPoints.length - 1; i++) {
+                    if (i + 1 < allPoints.length) {
+                        indices.push(0, i, i + 1);
+                    }
+                }
+                
+                geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+                geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+                geometry.setIndex(indices);
+                geometry.computeVertexNormals();
+                
+                const continentMaterial = new THREE.MeshPhongMaterial({
+                    vertexColors: true,
+                    shininess: 8,
+                    flatShading: false,
+                    side: THREE.DoubleSide
+                });
+                
+                const mesh = new THREE.Mesh(geometry, continentMaterial);
+                globeGroup.add(mesh);
+
+                const borderPoints = [...points, points[0]];
+                const borderGeometry = new THREE.BufferGeometry().setFromPoints(borderPoints);
+                const borderMaterial = new THREE.LineBasicMaterial({
+                    color: 0x2E7D32,
+                    linewidth: 2,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                const borderLine = new THREE.Line(borderGeometry, borderMaterial);
+                globeGroup.add(borderLine);
+            });
+
+            const cloudsGeometry = new THREE.SphereGeometry(5.15, 64, 64);
+            const cloudsMaterial = new THREE.MeshPhongMaterial({
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.1,
+                side: THREE.DoubleSide
+            });
+            const clouds = new THREE.Mesh(cloudsGeometry, cloudsMaterial);
+            globeGroup.add(clouds);
+
+            const glowGeometry = new THREE.SphereGeometry(5.3, 64, 64);
+            const glowMaterial = new THREE.ShaderMaterial({
+                uniforms: {},
+                vertexShader: `
+                    varying vec3 vNormal;
+                    void main() {
+                        vNormal = normalize(normalMatrix * normal);
+                        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                    }
+                `,
+                fragmentShader: `
+                    varying vec3 vNormal;
+                    void main() {
+                        float intensity = pow(0.6 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 2.0);
+                        gl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity;
+                    }
+                `,
+                side: THREE.BackSide,
+                blending: THREE.AdditiveBlending,
+                transparent: true
+            });
+            const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+            globeGroup.add(glow);
+
+            globe = globeGroup;
+            scene.add(globe);
+        }
+
+        function SimplexNoise(x, y, z) {
+            return Math.sin(x * 10) * Math.cos(y * 10) * Math.sin(z * 10) * 0.5;
+        }
+
+        function getContinentsData() {
+            return [
+                {
+                    name: 'northAmerica',
+                    points: [
+                        [71,-156],[70,-141],[69,-137],[68,-142],[66,-168],[64,-166],[62,-164],[60,-162],
+                        [58,-137],[56,-134],[54,-133],[52,-132],[50,-130],[48,-126],[46,-124],[44,-124],
+                        [42,-124],[40,-123],[38,-122],[36,-121],[34,-119],[32,-117],[31,-115],[30,-114],
+                        [28,-112],[26,-111],[24,-109],[22,-106],[20,-103],[18,-100],[17,-96],[16,-93],
+                        [15,-88],[16,-86],[18,-86],[20,-86],[22,-85],[24,-83],[26,-81],[28,-80],
+                        [30,-81],[32,-80],[34,-78],[36,-77],[38,-76],[40,-75],[42,-75],[44,-78],
+                        [46,-76],[48,-72],[50,-68],[52,-67],[54,-66],[56,-62],[58,-64],[60,-64],
+                        [62,-69],[64,-75],[66,-80],[68,-87],[70,-92],[71,-105],[71,-120]
+                    ]
+                },
+                {
+                    name: 'southAmerica',
+                    points: [
+                        [13,-81],[12,-79],[11,-77],[10,-75],[9,-73],[8,-72],[7,-71],
+                        [6,-70],[5,-70],[4,-71],[3,-73],[2,-75],[1,-77],[0,-78],
+                        [-1,-78],[-2,-77],[-3,-76],[-4,-76],[-5,-76],[-6,-76],[-7,-75],
+                        [-8,-75],[-9,-75],[-10,-76],[-11,-77],[-12,-77],[-13,-76],[-14,-75],
+                        [-15,-74],[-16,-73],[-17,-72],[-18,-71],[-19,-70],[-20,-69],[-21,-69],
+                        [-22,-69],[-23,-70],[-24,-70],[-25,-70],[-26,-71],[-27,-71],[-28,-71],
+                        [-29,-71],[-30,-71],[-31,-71],[-32,-71],[-33,-71],[-34,-71],[-35,-72],
+                        [-36,-72],[-37,-73],[-38,-73],[-39,-73],[-40,-73],[-41,-73],[-42,-73],
+                        [-43,-72],[-44,-72],[-45,-72],[-46,-72],[-47,-73],[-48,-73],[-49,-72],
+                        [-50,-72],[-51,-71],[-52,-70],[-53,-69],[-54,-69],[-55,-68],[-55,-67],
+                        [-54,-66],[-53,-67],[-52,-68],[-51,-69],[-50,-69],[-49,-70],[-48,-71],
+                        [-47,-73],[-46,-74],[-45,-74],[-44,-74],[-43,-75],[-42,-75],[-41,-75],
+                        [-40,-75],[-39,-74],[-38,-74],[-37,-73],[-36,-73],[-35,-72],[-34,-70],
+                        [-33,-70],[-32,-70],[-31,-70],[-30,-71],[-29,-70],[-28,-70],[-27,-70],
+                        [-26,-69],[-25,-69],[-24,-68],[-23,-68],[-22,-67],[-21,-67],[-20,-68],
+                        [-19,-69],[-18,-69],[-17,-70],[-16,-70],[-15,-71],[-14,-72],[-13,-73],
+                        [-12,-75],[-11,-76],[-10,-77],[-9,-78],[-8,-78],[-7,-79],[-6,-80],
+                        [-5,-81],[-4,-81],[-3,-81],[-2,-81],[-1,-80],[0,-80],[1,-81],
+                        [2,-81],[3,-82],[4,-82],[5,-81],[6,-81],[7,-80],[8,-80],
+                        [9,-79],[10,-79],[11,-79],[12,-80]
+                    ]
+                },
+                {
+                    name: 'europe',
+                    points: [
+                        [71,26],[70,28],[69,25],[68,22],[67,20],[66,18],[65,15],[64,12],[62,10],
+                        [60,5],[59,4],[58,3],[57,4],[56,3],[55,5],[54,7],[53,8],[52,9],[51,9],
+                        [50,10],[49,8],[48,5],[47,2],[46,0],[45,-2],[44,-4],[43,-5],[42,-6],
+                        [41,-5],[40,-4],[39,-2],[38,0],[37,2],[36,4],[36,6],[37,10],[38,14],
+                        [39,18],[40,22],[41,24],[42,26],[43,28],[44,29],[45,29],[46,30],[47,31],
+                        [48,31],[49,31],[50,30],[51,31],[52,32],[53,32],[54,33],[56,34],[58,37],
+                        [60,40],[62,43],[64,44],[66,43],[68,40],[70,35],[71,30]
+                    ]
+                },
+                {
+                    name: 'africa',
+                    points: [
+                        [37,10],[36,11],[35,11],[34,11],[33,10],[32,10],[31,10],[30,11],[29,12],
+                        [28,13],[27,15],[26,17],[25,18],[24,19],[23,20],[22,19],[21,18],[20,17],
+                        [19,16],[18,16],[17,15],[16,16],[15,17],[14,17],[13,16],[12,16],[11,15],
+                        [10,14],[9,14],[8,13],[7,12],[6,11],[5,9],[4,8],[3,8],[2,7],[1,8],
+                        [0,8],[-1,9],[-2,9],[-3,9],[-4,10],[-5,11],[-6,11],[-7,12],[-8,13],
+                        [-9,13],[-10,14],[-11,15],[-12,15],[-13,16],[-14,17],[-15,17],[-16,18],
+                        [-17,19],[-18,20],[-19,21],[-20,22],[-21,22],[-22,23],[-23,24],[-24,25],
+                        [-25,26],[-26,27],[-27,28],[-28,29],[-29,30],[-30,30],[-31,31],[-32,31],
+                        [-33,31],[-34,31],[-35,30],[-35,29],[-34,28],[-33,27],[-32,26],[-31,24],
+                        [-30,23],[-29,22],[-28,22],[-27,21],[-26,20],[-25,20],[-24,19],[-23,18],
+                        [-22,18],[-21,17],[-20,16],[-19,15],[-18,14],[-17,13],[-16,13],[-15,12],
+                        [-14,12],[-13,12],[-12,13],[-11,14],[-10,13],[-9,14],[-8,16],[-7,18],
+                        [-6,20],[-5,22],[-4,23],[-3,25],[-2,27],[-1,28],[0,30],[1,32],
+                        [2,33],[3,35],[4,36],[5,37],[6,38],[7,39],[8,40],[9,41],[10,42],
+                        [11,42],[12,43],[13,43],[14,43],[15,43],[16,43],[17,43],[18,43],
+                        [19,42],[20,42],[21,42],[22,41],[23,41],[24,40],[25,39],[26,38],
+                        [27,37],[28,36],[29,35],[30,34],[31,33],[32,31],[33,29],[34,27],
+                        [35,24],[36,20],[37,16],[37,13]
+                    ]
+                },
+                {
+                    name: 'asia',
+                    points: [
+                        [77,100],[76,95],[75,90],[74,85],[73,80],[72,76],[71,75],[70,70],[69,65],
+                        [68,62],[67,60],[66,60],[65,58],[64,56],[63,55],[62,54],[61,53],[60,52],
+                        [59,51],[58,50],[57,50],[56,49],[55,49],[54,48],[53,48],[52,47],[51,47],
+                        [50,47],[49,47],[48,47],[47,48],[46,49],[45,48],[44,49],[43,50],[42,50],
+                        [41,51],[40,52],[39,54],[38,56],[37,58],[36,60],[35,62],[34,66],[33,68],
+                        [32,72],[31,75],[30,77],[29,80],[28,82],[27,85],[26,88],[25,90],[24,93],
+                        [23,95],[22,97],[21,99],[20,100],[19,102],[18,103],[17,104],[16,105],
+                        [15,105],[14,106],[13,107],[12,107],[11,107],[10,108],[9,108],[8,108],
+                        [7,108],[6,108],[5,108],[4,109],[3,108],[2,109],[1,110],[1,112],
+                        [2,115],[3,118],[4,120],[6,123],[8,125],[10,126],[12,127],[15,128],
+                        [18,129],[20,130],[23,131],[25,132],[28,133],[30,135],[33,137],[35,138],
+                        [38,139],[40,140],[42,141],[44,142],[46,143],[48,144],[50,145],[52,146],
+                        [54,147],[56,148],[58,149],[60,150],[61,152],[62,154],[63,155],[64,156],
+                        [65,157],[66,158],[67,158],[68,158],[69,157],[70,156],[71,155],[72,153],
+                        [73,151],[74,148],[75,145],[76,140],[77,135],[77,125],[77,115]
+                    ]
+                },
+                {
+                    name: 'oceania',
+                    points: [
+                        [-10,130],[-11,128],[-12,127],[-13,126],[-14,125],[-15,125],[-16,124],
+                        [-17,124],[-18,124],[-19,124],[-20,124],[-21,124],[-22,125],[-23,125],
+                        [-24,125],[-25,126],[-26,127],[-27,127],[-28,128],[-29,128],[-30,128],
+                        [-31,129],[-32,130],[-33,131],[-34,133],[-35,135],[-36,137],[-37,139],
+                        [-38,141],[-38,143],[-38,145],[-38,147],[-38,149],[-37,150],[-36,152],
+                        [-35,153],[-34,154],[-33,154],[-32,154],[-31,154],[-30,154],[-29,154],
+                        [-28,154],[-27,153],[-26,153],[-25,152],[-24,152],[-23,151],[-22,150],
+                        [-21,149],[-20,149],[-19,148],[-18,147],[-17,146],[-16,145],[-15,144],
+                        [-14,143],[-13,142],[-12,141],[-11,139],[-11,137],[-10,135],[-10,133]
+                    ]
+                }
+            ];
+        }
+
+        function convertLatLonToVector3(lat, lon, radius) {
+            const phi = (90 - lat) * (Math.PI / 180);
+            const theta = (lon + 180) * (Math.PI / 180);
+            
+            return new THREE.Vector3(
+                -(radius * Math.sin(phi) * Math.cos(theta)),
+                radius * Math.cos(phi),
+                radius * Math.sin(phi) * Math.sin(theta)
+            );
+        }
+
+        function createParticles() {
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = 1500;
+            const posArray = new Float32Array(particlesCount * 3);
+
+            for(let i = 0; i < particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 35;
+            }
+
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+            const particlesMaterial = new THREE.PointsMaterial({
+                size: 0.04,
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.7
+            });
+
+            particles = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particles);
+        }
+
+        function createConnections() {
+            const connectionGroup = new THREE.Group();
+            
+            const connectionPoints = [
+                { lat: 40.7, lon: -74 },
+                { lat: 51.5, lon: -0.1 },
+                { lat: 35.7, lon: 139.7 },
+                { lat: -23.5, lon: -46.6 },
+                { lat: 1.3, lon: 103.8 },
+                { lat: -33.9, lon: 151.2 },
+                { lat: 55.8, lon: 37.6 },
+                { lat: 28.6, lon: 77.2 }
+            ];
+
+            const lineMaterial = new THREE.LineBasicMaterial({
+                color: 0xFFD54F,
+                transparent: true,
+                opacity: 0.6
+            });
+
+            for(let i = 0; i < connectionPoints.length; i++) {
+                for(let j = i + 1; j < connectionPoints.length; j++) {
+                    const points = [];
+                    const start = convertLatLonToVector3(connectionPoints[i].lat, connectionPoints[i].lon, 5.25);
+                    const end = convertLatLonToVector3(connectionPoints[j].lat, connectionPoints[j].lon, 5.25);
+                    
+                    const distance = start.distanceTo(end);
+                    const segments = Math.floor(distance * 8);
+                    
+                    for(let k = 0; k <= segments; k++) {
+                        const t = k / segments;
+                        const point = new THREE.Vector3();
+                        point.lerpVectors(start, end, t);
+                        
+                        const altitude = Math.sin(t * Math.PI) * distance * 0.35;
+                        point.normalize().multiplyScalar(5.25 + altitude);
+                        
+                        points.push(point);
+                    }
+                    
+                    const geometry = new THREE.BufferGeometry().setFromPoints(points);
+                    const line = new THREE.Line(geometry, lineMaterial);
+                    connectionGroup.add(line);
+                }
+            }
+
+            connectionPoints.forEach(city => {
+                const pos = convertLatLonToVector3(city.lat, city.lon, 5.25);
+                const pointGeometry = new THREE.SphereGeometry(0.05, 16, 16);
+                const pointMaterial = new THREE.MeshBasicMaterial({
+                    color: 0xFFEB3B,
+                    transparent: true,
+                    opacity: 0.9
+                });
+                const point = new THREE.Mesh(pointGeometry, pointMaterial);
+                point.position.copy(pos);
+                connectionGroup.add(point);
+            });
+
+            connections = connectionGroup;
+            scene.add(connections);
+        }
+
+        function setupEventListeners() {
+            const canvas = renderer.domElement;
+            
+            canvas.addEventListener('mousedown', onMouseDown);
+            canvas.addEventListener('mousemove', onMouseMove);
+            canvas.addEventListener('mouseup', onMouseUp);
+            canvas.addEventListener('mouseleave', onMouseUp);
+            canvas.addEventListener('wheel', onWheel, { passive: true });
+            
+            canvas.addEventListener('touchstart', onTouchStart, { passive: false });
+            canvas.addEventListener('touchmove', onTouchMove, { passive: false });
+            canvas.addEventListener('touchend', onTouchEnd);
+            
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function onMouseDown(e) {
+            isDragging = true;
+            previousMousePosition = { x: e.clientX, y: e.clientY };
+        }
+
+        function onMouseMove(e) {
+            if (isDragging) {
+                const deltaX = e.clientX - previousMousePosition.x;
+                const deltaY = e.clientY - previousMousePosition.y;
+                rotationVelocity.x = deltaY * 0.005;
+                rotationVelocity.y = deltaX * 0.005;
+                previousMousePosition = { x: e.clientX, y: e.clientY };
+            }
+        }
+
+        function onMouseUp() {
+            isDragging = false;
+        }
+
+        function onTouchStart(e) {
+            if (e.touches.length === 1) {
+                isDragging = true;
+                previousMousePosition = { 
+                    x: e.touches[0].clientX, 
+                    y: e.touches[0].clientY 
+                };
+            }
+        }
+
+        function onTouchMove(e) {
+            if (isDragging && e.touches.length === 1) {
+                e.preventDefault();
+                const deltaX = e.touches[0].clientX - previousMousePosition.x;
+                const deltaY = e.touches[0].clientY - previousMousePosition.y;
+                rotationVelocity.x = deltaY * 0.005;
+                rotationVelocity.y = deltaX * 0.005;
+                previousMousePosition = { 
+                    x: e.touches[0].clientX, 
+                    y: e.touches[0].clientY 
+                };
+            }
+        }
+
+        function onTouchEnd() {
+            isDragging = false;
+        }
+
+        function onWheel(e) {
+            camera.position.z += e.deltaY * 0.01;
+            
+            // Limites de zoom ajustados por dispositivo
+            let minZoom, maxZoom;
+            if (window.innerWidth <= 480) {
+                minZoom = 12;
+                maxZoom = 28;
+            } else if (window.innerWidth <= 768) {
+                minZoom = 10;
+                maxZoom = 26;
+            } else {
+                minZoom = 8;
+                maxZoom = 25;
+            }
+            
+            camera.position.z = Math.max(minZoom, Math.min(maxZoom, camera.position.z));
+        }
+
+        function onWindowResize() {
+            const container = document.getElementById('globe-container');
+            
+            // Recalcula dimensões seguras
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+            const size = Math.min(containerWidth * 0.95, containerHeight * 0.95);
+            
+            camera.aspect = 1;
+            camera.updateProjectionMatrix();
+            renderer.setSize(size, size);
+            
+            // Reajusta zoom ao redimensionar
+            if (window.innerWidth <= 480) {
+                camera.position.z = 22;
+            } else if (window.innerWidth <= 768) {
+                camera.position.z = 18;
+            } else {
+                camera.position.z = 15;
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            globe.rotation.x += rotationVelocity.x;
+            globe.rotation.y += rotationVelocity.y;
+            
+            if (!isDragging) {
+                globe.rotation.y += 0.001;
+                rotationVelocity.x *= 0.95;
+                rotationVelocity.y *= 0.95;
+            }
+
+            connections.rotation.copy(globe.rotation);
+            particles.rotation.y += 0.0003;
+            particles.rotation.x += 0.0001;
+
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('load', init);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

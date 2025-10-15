@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato - Nova Geração RH | WhatsApp, E-mail e Atendimento Profissional</title>
+  <meta name="description" content="Entre em contato com a Nova Geração RH em Guaíba, RS. Fale conosco via WhatsApp, e-mail ou formulário e tire dúvidas sobre grupos de WhatsApp e oportunidades profissionais." />
+  <meta name="keywords" content="Contato, Nova Geração RH, Guaíba, RS, WhatsApp, e-mail, grupos de WhatsApp, carreira, networking, atendimento profissional, formulário de contato" />
+  <link rel="icon" type="image/png" href="lgoogle.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contato - Nova Geração RH | WhatsApp, E-mail e Atendimento Profissional" />
+  <meta property="og:description" content="Fale com a Nova Geração RH em Guaíba, RS. Suporte via WhatsApp, e-mail ou formulário de contato para oportunidades profissionais e grupos de WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="link-da-imagem.jpg" />
+  <meta property="og:url" content="https://www.seusite.com.br/contato" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contato - Nova Geração RH | WhatsApp, E-mail e Atendimento Profissional" />
+  <meta name="twitter:description" content="Entre em contato com a Nova Geração RH em Guaíba, RS. Suporte via WhatsApp, e-mail ou formulário para dúvidas sobre carreira e grupos de WhatsApp." />
+  <meta name="twitter:image" content="link-da-imagem.jpg" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <style>
+/* Base do layout original */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  padding-top: 170px;
+}
+
+body.dark-mode {
+  background-color: #000004;
+  color: #ffffff;
+}
+
+/* Header fixo */
+.header-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header {
+  background-color: #EFEFEF;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  color: #EFEFEF;
+  font-size: 1.8rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.header-left img {
+  height: 280px;
+  width: auto;
+  display: block;
+  margin-top: 11px;
+}
+
+.header-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: auto;
+  text-align: center;
+}
+
+.titulo-desktop {
+  display: block;
+  font-size: 2.8rem;
+  color: #013241;
+  font-weight: bold;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+
+.titulo-mobile {
+  display: none;
+}
+
+#darkModeToggle {
+  background: none;
+  border: 2px solid #013241;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #013241;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+/* Navegação */
+nav {
+  background-color: #EFEFEF !important;
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+nav a:hover,
+.dropdown:hover > a {
+  color: #013241;
+  font-weight: 700;
+  background-color: #EFEFEF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+nav a.ativo {
+  color: #000000;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #EFEFEF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-align: left;
+  color: #009AB2;
+  font-weight: normal;
+  background-color: #EFEFEF;
+}
+
+.dropdown-content a:hover {
+  background-color: #EFEFEF;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Seção Hero do Contato */
+.hero-contato {
+  background: linear-gradient(135deg, #009AB2 0%, #013241 100%);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 0;
+}
+
+.hero-contato h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-contato p {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+/* Container principal do contato */
+.contato-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Informações de contato */
+.contato-info {
+  background: #EFEFEF;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contato-info h2 {
+  color: #013241;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.info-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #009AB2, #013241);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.info-content h3 {
+  color: #013241;
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.info-content p {
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.info-content a {
+  color: #009AB2;
+  text-decoration: none;
+}
+
+.info-content a:hover {
+  text-decoration: underline;
+}
+
+/* Formulário de contato */
+.contato-form {
+  background: #EFEFEF;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contato-form h2 {
+  color: #013241;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #013241;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #009AB2;
+  box-shadow: 0 0 10px rgba(0,154,178,0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #009AB2, #013241);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,154,178,0.3);
+}
+
+/* Seção do mapa */
+.mapa-section {
+  margin: 80px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.mapa-section h2 {
+  color: #013241;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.mapa-section p {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.mapa-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.mapa-container iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+/* Footer */
+footer {
+  background-color: #EFEFEF;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #007b8a;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 80px;
+}
+
+body.dark-mode footer {
+  background-color: #000004;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+footer small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* Modo escuro */
+body.dark-mode .contato-info,
+body.dark-mode .contato-form {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .contato-info h2,
+body.dark-mode .contato-form h2 {
+  color: #009AB2;
+}
+
+body.dark-mode .info-item {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .info-content h3 {
+  color: #009AB2;
+}
+
+body.dark-mode .info-content p {
+  color: #ccc;
+}
+
+body.dark-mode .form-group label {
+  color: #009AB2;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .mapa-section h2 {
+  color: #009AB2;
+}
+
+body.dark-mode .mapa-section p {
+  color: #ccc;
+}
+
+/* Botões flutuantes */
+.floatb-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.floatb {
+  background-color: #009AB2;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  outline: none;
+  border: none;
+}
+
+.floatb:hover {
+  background-color: #007b8a;
+}
+
+.floatb-options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.floatb-options.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.floatb-btn {
+  background-color: #009AB2;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.floatb-btn:hover {
+  background-color: #007b8a;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  body {
+    padding-top: 0;
+  }
+
+  .titulo-desktop {
+    display: none !important;
+  }
+  
+  .titulo-mobile {
+    display: block !important;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .header-left img {
+    display: block;
+    margin: 30px auto 20px auto;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+  }
+
+  .header-title-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.1rem 0;
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 3px 5px;
+  }
+
+  #darkModeToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+  }
+
+  .hero-contato {
+    padding: 30px 20px;
+    margin-top: 150px;
+  }
+
+  .hero-contato h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-contato p {
+    font-size: 1.1rem;
+  }
+
+  .contato-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .contato-info,
+  .contato-form {
+    padding: 25px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .mapa-container iframe {
+    height: 300px;
+  }
+}
+
+/* Plataformas sociais */
+.plataformas-sociais {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.plataformas-sociais a {
+  display: inline-block;
+  margin: 0 15px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  filter: none !important;
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+.plataformas-sociais a img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  filter: none !important;
+}
+
+@media (max-width: 600px) {
+  .plataformas-sociais a img {
+  width: 30px;
+  height: 30px;
+  margin: -5px; /* espaçamento mobile */
+  }
+   #cookie-banner {
+  display: none; /* ou flex só se quiser que apareça sem JS, mas o script já controla */
+  position: fixed;
+  bottom: 15px;
+  width: 90%;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  background: #fff; /* ou cor desejada */
+  z-index: 9999;
+}
+
+#cookie-banner button {
+  width: 60%;              /* botão ocupa toda largura */
+  padding: 0.5rem 0;        /* ajuste vertical */
+  font-size: 0.9rem;        /* fonte menor */
+}
+}
+
+/* Mensagem de sucesso */
+.success-message {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<!-- Menu de navegação fixo -->
+<div class="header-nav-container">
+<header>
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+  <div class="header-left">
+    <img src="lg.png" alt="Logo Nova Geração RH" />
+    <div class="header-title-container">
+      <h1 class="titulo-desktop">Conectando Talentos</h1>
+    </div>
+  </div>
+</header>
+
+<nav>
+   <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
+    <div class="dropdown-content">
+      <a href="global.html">Página Global</a>
+      <a href="index.html">Início</a>
+      <a href="home.html">Bem-vindos</a>
+      <a href="cultura.html">Cultura</a>
+    </div>
+  </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">CARREIRA</a>
+      <div class="dropdown-content">
+        <a href="candidato.html">Candidato</a>
+        <a href="vagas.html">Vagas</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">ATENDIMENTO</a>
+      <div class="dropdown-content">
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html" class="ativo">Contato</a>
+      </div>
+    </div>
+
+<div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
+      <div class="dropdown-content">
+        <a href="informacoes.html">Inforações Gerais</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="lgbt.html">LGBT+</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
+        <a href="pcd.html">Pessoas com deficiência</a>
+      </div>
+    </div>
+
+ <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
+      <div class="dropdown-content">
+        <a href="blog.html">Blog</a>
+        <a href="facebook.html">Comunidade Facebook</a>
+        <a href="comunidade.html">Comunidade WhatsApp</a>
+      </div>
+    </div>
+
+  
+</nav>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-contato">
+  <h1>Fale Conosco</h1>
+  <p>Estamos prontos para transformar sua carreira ou potencializar sua empresa. Entre em contato e descubra como podemos ajudar você a alcançar seus objetivos profissionais.</p>
+</section>
+
+<!-- Container de Contato -->
+<section class="contato-container">
+  
+  <!-- Informações de Contato -->
+  <div class="contato-info">
+    <h2>Informações de Contato</h2>
+    
+    <div class="info-item">
+      <div class="info-icon">📧</div>
+      <div class="info-content">
+        <h3>E-mail</h3>
+        <p><a href="mailto:felipefigueiraandrade@gmail.com">felipefigueiraandrade@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">📱</div>
+      <div class="info-content">
+        <h3>WhatsApp</h3>
+        <p><a href="https://wa.me/5551993381495">(51) 99338-1495</a></p>
+        <p><a href="https://wa.me/5551996976579">(51) 99697-6579</a></p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">☎️</div>
+      <div class="info-content">
+        <h3>Telefone</h3>
+        <p><a href="tel:+5551993381495">(51) 99338-1495</a></p>
+        <p><a href="tel:+5551996976579">(51) 99697-6579</a></p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">📍</div>
+      <div class="info-content">
+        <h3>Localização</h3>
+        <p>Guaíba, Rio Grande do Sul<br>Brasil</p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">🏢</div>
+      <div class="info-content">
+        <h3>CNPJ</h3>
+        <p>46.599.025/0001-54</p>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">⏰</div>
+      <div class="info-content">
+        <h3>Horário de Atendimento</h3>
+        <p>Segunda a Sexta: 8h às 18h<br>Sábados: 8h às 12h</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulário de Contato -->
+  <div class="contato-form">
+    <h2>Envie sua Mensagem</h2>
+    
+    <div id="successMessage" class="success-message">
+      Mensagem enviada com sucesso! Entraremos em contato em breve.
+    </div>
+
+    <form id="contactForm" action="https://formspree.io/f/xovkeqpg" method="POST">
+      <!-- Campos ocultos para melhor organização dos emails -->
+      <input type="hidden" name="_subject" value="Novo contato do site Nova Geração RH">
+      <input type="hidden" name="_next" value="obrigado.html">
+      <input type="hidden" name="_captcha" value="false">
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nome">Nome Completo *</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="telefone">Telefone/WhatsApp</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(51) 99999-9999">
+        </div>
+        
+        <div class="form-group">
+          <label for="assunto">Assunto</label>
+          <select id="assunto" name="assunto">
+            <option value="">Selecione um assunto</option>
+            <option value="mentoria">Mentoria de Carreira</option>
+            <option value="consultoria">Consultoria para Empresas</option>
+            <option value="recrutamento">Recrutamento Estratégico</option>
+            <option value="entrevista">Preparação para Entrevistas</option>
+            <option value="curriculo">Análise de Currículo</option>
+            <option value="parceria">Parcerias</option>
+            <option value="outros">Outros</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="empresa">Empresa (opcional)</label>
+        <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa">
+      </div>
+
+      <div class="form-group">
+        <label for="mensagem">Mensagem *</label>
+        <textarea id="mensagem" name="mensagem" required placeholder="Conte-nos como podemos ajudar você ou sua empresa..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Enviar Mensagem</button>
+    </form>
+  </div>
+</section>
+
+<!-- Seção do Mapa -->
+<section class="mapa-section">
+  <h2>Nossa Localização</h2>
+  <p>Estamos localizados em Guaíba, Rio Grande do Sul, atendendo toda a região metropolitana de Porto Alegre.</p>
+  
+  <div class="mapa-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108892.46674847768!2d-51.42553089999999!3d-30.114421349999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951978567f17f28d%3A0x2c2c5272bacf4d3a!2sGua%C3%ADba%2C%20RS!5e0!3m2!1spt!2sbr!4v1640000000000!5m2!1spt!2sbr"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <p><strong>CNPJ:</strong>-/p>
+  <p><strong>Telefone:</strong>(51) 99697-6579</p>
+  <p><strong>E-mail:</strong> Exemplo@gmail.com</p>
+  <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
+
+    <div class="plataformas-sociais">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="facebook1.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="instagram1.png" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank">
+            <img src="linkedin1.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="youtube1.png" alt="YouTube">
+        </a>
+    </div>
+</footer>
+
+
+<!-- Botão flutuante de contatos -->
+<div class="floatb-container">
+  <button class="floatb" id="floatb">
+    <img src="user.png" alt="Principal" width="30">
+  </button>
+
+  <div class="floatb-options" id="floatbOptions">
+    <a href="https://wa.me/5551993381495" target="_blank" class="floatb-btn">
+      <img src="whatsapp.png" alt="WhatsApp 1" width="24">
+    </a>
+    <a href="https://wa.me/5551996976579" target="_blank" class="floatb-btn">
+      <img src="whatsapp2.png" alt="WhatsApp 2" width="24">
+    </a>
+    <a href="tel:+5551993381495" class="floatb-btn">
+      <img src="ligação.png" alt="Ligar" width="24">
+    </a>
+    <a href="https://t.me/novaGeracao" target="_blank" class="floatb-btn">
+      <img src="telegrama.png" alt="Telegram" width="24">
+    </a>
+  </div>
+</div>
+
+<script>
+// Modo escuro
+function toggleDarkMode() {
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  if (isDark) {
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+}
+
+// Carregar tema salvo
+window.onload = () => {
+  const theme = localStorage.getItem("theme");
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  if (theme === "dark") {
+    body.classList.add("dark-mode");
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+};
+
+// Dropdown menu
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  if (dropdownToggle && dropdownContent) {
+    dropdownToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      dropdownContent.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!dropdownToggle.contains(e.target) && !dropdownContent.contains(e.target)) {
+        dropdownContent.classList.remove("show");
+      }
+    });
+  }
+});
+
+// Botão flutuante
+const floatb = document.getElementById('floatb');
+const floatbOptions = document.getElementById('floatbOptions');
+let timeout;
+
+floatb.addEventListener('click', () => {
+  floatbOptions.classList.add('show');
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    floatbOptions.classList.remove('show');
+  }, 3000);
+});
+
+// Formulário de contato
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  const form = this;
+  const submitBtn = form.querySelector('.submit-btn');
+  const successMessage = document.getElementById('successMessage');
+  
+  // Desabilitar botão durante envio
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
+  
+  // Se usando Formspree ou similar, não preventDefault
+  // O formulário será enviado normalmente
+  
+  // Para mostrar mensagem após envio bem-sucedido
+  // (isso funcionará com redirecionamento do Formspree)
+  setTimeout(() => {
+    successMessage.style.display = 'block';
+    form.reset();
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Enviar Mensagem';
+    
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 5000);
+  }, 1000);
+});
+
+// Máscara para telefone
+document.getElementById('telefone').addEventListener('input', function(e) {
+  let value = e.target.value.replace(/\D/g, '');
+  if (value.length <= 11) {
+    value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    if (value.length < 14) {
+      value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+    }
+  }
+  e.target.value = value;
+});
+
+// Cookies
+document.getElementById('accept-cookies').addEventListener('click', function() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookiesAccepted', 'true');
+});
+
+// Verificar se o usuário já aceitou cookies
+window.addEventListener('load', () => {
+    if(localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'none';
+    } else {
+        document.getElementById('cookie-banner').style.display = 'flex';
+    }
+});
+</script>
+
+</body>
+</html>

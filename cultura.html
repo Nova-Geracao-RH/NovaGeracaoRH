@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="lgoogle.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO básico -->
+  <title>Nossa Cultura - Nova Geração RH | Transparência e Inovação no RH</title>
+  <meta name="description" content="Descubra a cultura da Nova Geração RH: transparência, humanização, ética e inovação para transformar o futuro do trabalho.">
+  <meta name="keywords" content="cultura organizacional, RH, transparência, inovação, humanização, ética, Nova Geração RH, gestão de pessoas">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.seusite.com.br/nossa-cultura">
+
+  <!-- Open Graph para redes sociais -->
+  <meta property="og:title" content="Nossa Cultura - Nova Geração RH">
+  <meta property="og:description" content="Conheça nossa cultura baseada em transparência, ética, inovação e humanização no RH.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.seusite.com.br/nossa-cultura">
+  <meta property="og:image" content="https://www.seusite.com.br/imagens/cultura-rh.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nossa Cultura - Nova Geração RH">
+  <meta name="twitter:description" content="Transparência, inovação e humanização no RH. Descubra nossa cultura!">
+  <meta name="twitter:image" content="https://www.seusite.com.br/imagens/cultura-rh.png">
+
+  <!-- Favorece SEO local (opcional, se sua empresa tiver endereço físico) -->
+  <meta name="geo.placename" content="Cidade, Estado, Brasil">
+  <meta name="geo.region" content="BR-XX">
+
+  <style>
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  padding-top: 170px; /* header + nav */
+}
+
+
+/* Garante o mesmo comportamento no mobile */
+@media (max-width: 768px) {
+  nav a.ativo {
+    color: black !important;
+  }
+}
+    
+/* Corrige espaçamento entre palavras no desktop (página Cultura) */
+@media (min-width: 769px) {
+  .card p,
+  .card-mvv p,
+  .cultura-texto p,
+  .hero-cultura p {
+    text-align: left;       /* impede que o navegador justifique o texto */
+    word-spacing: normal;   /* remove espaçamento exagerado entre palavras */
+    letter-spacing: normal; /* remove espaçamento entre letras */
+    line-height: 1.4;       /* reduz o espaço vertical entre linhas */
+    white-space: normal;    /* garante quebra de linha natural */
+  }
+}
+
+
+body.dark-mode {
+  background-color: #000004;
+  color: #ffffff;
+}
+
+.header-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .header-nav-container {
+  background-color: #000004;
+}
+
+header {
+  background-color: #EFEFEF;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  color: #EFEFEF;
+  font-size: 1.8rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.header-left img {
+  height: 280px;
+  width: auto;
+  display: block;
+  margin-top: 11px;
+}
+
+.header-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: auto;
+  text-align: center;
+}
+
+.titulo-desktop {
+  display: block;
+  font-size: 2.8rem;
+  color: #013241;
+  font-weight: bold;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+
+body.dark-mode .titulo-desktop {
+  color: #000000;
+}
+
+.titulo-mobile {
+  display: none;
+}
+
+#darkModeToggle {
+  background: none;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+body.dark-mode #darkModeToggle {
+  border-color: #009AB2;
+  color: #009AB2;
+}
+
+#darkModeToggle:hover {
+background-color: rgba(255,255,255,0.1);
+}
+
+/* Nav e dropdown */
+
+
+nav {
+  background-color: #EFEFEF !important;
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+body.dark-mode nav {
+  background-color: #000004;
+}
+
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover,
+.dropdown:hover > a {
+  color: #013241;               /* cor do texto */
+  font-weight: 700;             /* mais negrito */
+  background-color: #EFEFEF !important; /* fundo fixo, sem azul */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);       /* leve zoom */
+}
+
+/* Hover no modo escuro */
+body.dark-mode nav a:hover,
+body.dark-mode .dropdown:hover > a {
+  background-color: #EFEFEF !important; /* fundo fixo, sem azul */
+  color: #013241;           /* texto azul-claro */
+  font-weight: 700;
+  transform: scale(1.05);
+}
+
+nav a.ativo {
+  color: black !important;
+  font-weight: normal; /* remove o negrito */
+  cursor: default;
+}
+
+body.dark-mode nav a.ativo {
+  color: #009AB2;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #EFEFEF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+}
+
+body.dark-mode .dropdown-content {
+  background-color: #EFEFEF;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-align: left;
+  color: #009AB2;
+  font-weight: normal;
+  background-color: #EFEFEF;
+}
+
+body.dark-mode .dropdown-content a {
+  background-color: #EFEFEF;
+}
+.dropdown-content a:hover {
+  background-color: rgba(0, 154, 178, 0.1);
+}
+body.dark-mode .dropdown-content a:hover {
+  background-color: rgba(0, 154, 178, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hero Section */
+.hero-cultura {
+  background: linear-gradient(135deg, #009AB2 0%, #013241 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cultura::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+  opacity: 0.3;
+}
+
+.hero-cultura h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+  animation: fadeInDown 1s ease;
+}
+
+.hero-cultura p {
+  font-size: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease 0.3s both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cards Container */
+.cards-container {
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #009AB2;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #009AB2, #013241);
+  border-radius: 2px;
+}
+
+body.dark-mode .section-title {
+  color: #009AB2;
+}
+
+/* Cards Grid - 4 colunas */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #009AB2, #013241);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,154,178,0.2);
+}
+
+body.dark-mode .card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #333;
+}
+
+.card h2 {
+  color: #013241;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+body.dark-mode .card h2 {
+  color: #009AB2;
+}
+
+.card-icon {
+  font-size: 2rem;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+.card p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+body.dark-mode .card p {
+  color: #ccc;
+}
+
+/* Missão, Visão, Valores - 4 cards em linha */
+.cards-mvv {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.card-mvv {
+  background: linear-gradient(135deg, #009AB2 0%, #013241 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,154,178,0.3);
+  transition: all 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-mvv::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  transition: all 0.6s ease;
+}
+
+.card-mvv:hover::before {
+  top: -60%;
+  right: -60%;
+}
+
+.card-mvv:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,154,178,0.4);
+}
+
+.card-mvv h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-mvv p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* Seção de texto descritivo */
+.cultura-texto {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 50px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .cultura-texto {
+  background: #1a1a1a;
+}
+
+.cultura-texto p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-bottom: 25px;
+  text-align: justify;
+  color: #333;
+}
+
+body.dark-mode .cultura-texto p {
+  color: #ccc;
+}
+
+.cultura-texto strong {
+  color: #009AB2;
+}
+
+/* Footer */
+footer {
+  background-color: #EFEFEF;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #007b8a;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 80px;
+}
+
+body.dark-mode footer {
+  background-color: #000004;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+footer small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
+}
+
+.plataformas-sociais {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.plataformas-sociais a img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  filter: none !important;
+}
+
+.plataformas-sociais a {
+  display: inline-block;
+  margin: 0 15px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  filter: none !important;
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+.floatb-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.floatb {
+  background-color: #009AB2;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  outline: none !important;
+  border: none;
+}
+
+.floatb:hover {
+  background-color: #007b8a;
+}
+
+.floatb-options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.floatb-options.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.floatb-btn {
+  background-color: #009AB2;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.floatb-btn:hover {
+  background-color: #007b8a;
+}
+
+.floatb img {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.floatb-btn img {
+  display: block;
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 1200px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cards-mvv {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .card p,
+  .card-mvv p,
+  .cultura-texto p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;  /* ativa hifenização automática */
+    word-spacing: 0;
+    line-height: 1.2;
+  }
+}
+
+    
+@media (max-width: 600px) {
+  body {
+    padding-top: 0;
+    margin: 0;
+  }
+
+  .titulo-desktop {
+    display: none !important;
+  }
+
+  .titulo-mobile {
+    display: block !important;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .header-left img {
+    display: block;
+    margin: 30px auto 20px auto;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+  }
+
+  .header-title-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.1rem 0;
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 3px 5px;
+  }
+
+  #darkModeToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+  }
+
+  .hero-cultura {
+    padding: 50px 20px;
+    margin-top: 160px;
+  }
+
+  .hero-cultura h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-cultura p {
+    font-size: 1.1rem;
+  }
+
+  .cards-grid,
+  .cards-mvv {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card,
+  .card-mvv {
+    padding: 25px;
+  }
+
+  .cultura-texto {
+    padding: 30px 20px;
+    margin: 40px 20px;
+  }
+
+  .cultura-texto p {
+    font-size: 1rem;
+  }
+
+@media (max-width: 600px) {
+  .plataformas-sociais a img {
+    width: 30px;
+    height: 30px;
+    margin: -5px;
+  }
+}
+
+.plataformas-sociais a {
+  display: inline-block;
+  margin: 0 15px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  filter: none !important;
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+.plataformas-sociais a img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  filter: none !important;
+}
+
+@media (max-width: 600px) {
+  .plataformas-sociais a img {
+    width: 30px;
+    height: 30px;
+    margin: -5px;
+  }
+
+}
+  }
+</style>
+</head>
+<body>
+
+<div class="header-nav-container">
+<header>
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+  <div class="header-left">
+    <img src="lg.png" alt="Logo Nova Geração RH" />
+    <div class="header-title-container">
+      <h1 class="titulo-desktop">Conectando Talentos</h1>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
+    <div class="dropdown-content">
+      <a href="global.html">Página Global</a>
+      <a href="index.html">Início</a>
+      <a href="home.html">Bem-vindos</a>
+      <a href="cultura.html" class="ativo">Cultura</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">CARREIRA</a>
+    <div class="dropdown-content">
+      <a href="candidato.html">Candidato</a>
+      <a href="vagas.html">Vagas</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">ATENDIMENTO</a>
+    <div class="dropdown-content">
+      <a href="servicos.html">Serviços</a>
+      <a href="contato.html">Contato</a>
+    </div>
+  </div>
+
+ <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
+      <div class="dropdown-content">
+        <a href="informacoes.html">Inforações Gerais</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="lgbt.html">LGBT+</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
+        <a href="pcd.html">Pessoas com deficiência</a>
+      </div>
+    </div>
+
+ <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
+      <div class="dropdown-content">
+        <a href="blog.html">Blog</a>
+        <a href="facebook.html">Comunidade Facebook</a>
+        <a href="whatsapp.html">Comunidade WhatsApp</a>
+      </div>
+    </div>
+</nav>
+</div>
+
+<section class="hero-cultura">
+  <h1>Nossa Cultura e Valores</h1>
+  <p>Construímos uma cultura organizacional baseada em pessoas, transparência, ética e inovação. Conheça os pilares que nos guiam.</p>
+</section>
+
+<div class="cards-container">
+  <h2 class="section-title">Nossos Valores Fundamentais</h2>
+  
+  <div class="cards-grid">
+    <div class="card">
+      <h2><span class="card-icon">💎</span> Transparência</h2>
+      <p>Comunicamos de forma clara e honesta em todas as nossas relações, criando confiança e credibilidade junto a candidatos e empresas parceiras.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">❤️</span> Humanização</h2>
+      <p>Cada processo valoriza pessoas, respeitando suas histórias, talentos e potenciais. Colocamos o ser humano no centro de tudo que fazemos.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">🚀</span> Inovação</h2>
+      <p>Aplicamos tecnologias modernas, métodos ágeis e soluções criativas para transformar o mercado de recrutamento e seleção.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">🤝</span> Engajamento</h2>
+      <p>Incentivamos participação ativa e colaboração entre todos os envolvidos, criando uma comunidade forte e conectada.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">📚</span> Aprendizado Contínuo</h2>
+      <p>Compartilhamos conhecimento constantemente para promover desenvolvimento pessoal e profissional de todos os nossos stakeholders.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">⚖️</span> Justiça e Ética</h2>
+      <p>Buscamos sempre relações equilibradas e decisões guiadas por princípios éticos sólidos, promovendo um ambiente justo e respeitoso.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">🌟</span> Colaboração</h2>
+      <p>Trabalhamos juntos para atingir objetivos comuns, fortalecendo relações e construindo parcerias duradouras e produtivas.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="card-icon">🎯</span> Responsabilidade</h2>
+      <p>Assumimos compromisso com nossas ações e resultados, sempre com ética, integridade e foco no impacto positivo que geramos.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Missão, Visão, Valores e Cultura</h2>
+  
+  <div class="cards-mvv">
+    <div class="card-mvv">
+      <h2>🎯 Missão</h2>
+      <p>Conectar talentos a oportunidades, facilitando o recrutamento e promovendo desenvolvimento humano com tecnologia, empatia e excelência.</p>
+    </div>
+
+    <div class="card-mvv">
+      <h2>🔭 Visão</h2>
+      <p>Ser referência nacional em soluções de RH, moldando um mercado mais transparente, moderno e eficiente para todos.</p>
+    </div>
+
+    <div class="card-mvv">
+      <h2>💡 Valores</h2>
+      <p>Ética, transparência, humanização, inovação, engajamento e compromisso social guiam todas as nossas decisões e ações.</p>
+    </div>
+
+    <div class="card-mvv">
+      <h2>🌱 Cultura</h2>
+      <p>Pessoas no centro, incentivando participação ativa, aprendizado contínuo, colaboração e crescimento conjunto.</p>
+    </div>
+  </div>
+
+  <div class="cultura-texto">
+    <p>Na <strong>Nova Geração RH</strong>, pessoas estão no centro de tudo. Nossa cultura se baseia em <strong>transparência, ética, humanização e inovação</strong>. Cada ação reflete nosso compromisso com relações justas e produtivas entre empresas e profissionais.</p>
+
+    <p>Comunicamos de forma clara, valorizamos histórias e talentos, incentivamos participação ativa e aplicamos soluções criativas e tecnológicas. Compartilhamos conhecimento continuamente e buscamos sempre decisões equilibradas e éticas.</p>
+
+    <p>Nossa missão é conectar talentos a oportunidades, facilitando recrutamento e desenvolvimento humano com tecnologia, empatia e excelência. Queremos ser referência nacional em soluções de RH, moldando um mercado mais transparente, moderno e eficiente.</p>
+
+    <p>Atuamos com <strong>ética, transparência, humanização, inovação, engajamento e compromisso social</strong>. Nosso propósito é construir pontes que conectem pessoas a oportunidades, promovendo crescimento profissional e relações justas.</p>
+
+    <p>Oferecemos soluções personalizadas de recrutamento, treinamentos, mentorias e recursos digitais, incorporando tendências modernas como ATS e inteligência artificial. Criamos experiências significativas, fomentamos networking e comunidades interativas, sendo parceiros estratégicos que refletem nossa cultura de ética, transparência e inovação.</p>
+  </div>
+</div>
+
+<footer>
+  <p><strong>CNPJ:</strong>-/p>
+  <p><strong>Telefone:</strong>(51) 99697-6579</p>
+  <p><strong>E-mail:</strong> Exemplo@gmail.com</p>
+  <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
+
+  <div class="plataformas-sociais">
+    <a href="https://www.facebook.com" target="_blank" class="social facebook">
+      <img src="facebook1.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com" target="_blank" class="social instagram">
+      <img src="instagram1.png" alt="Instagram">
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" class="social linkedin">
+      <img src="linkedin1.png" alt="LinkedIn">
+    </a>
+    <a href="https://www.youtube.com" target="_blank" class="social youtube">
+      <img src="youtube1.png" alt="YouTube">
+    </a>
+  </div>
+</footer>
+
+<div class="floatb-container">
+  <button class="floatb" id="floatb">
+    <img src="user.png" alt="Principal" width="30">
+  </button>
+
+  <div class="floatb-options" id="floatbOptions">
+    <a href="https://wa.me/5551993381495" target="_blank" class="floatb-btn">
+      <img src="whatsapp.png" alt="WhatsApp 1" width="24">
+    </a>
+    <a href="https://wa.me/5551996976579" target="_blank" class="floatb-btn">
+      <img src="whatsapp2.png" alt="WhatsApp 2" width="24">
+    </a>
+    <a href="tel:+5551993381495" class="floatb-btn">
+      <img src="ligação.png" alt="Ligar" width="24">
+    </a>
+    <a href="https://t.me/novageracaorh" target="_blank" class="floatb-btn">
+      <img src="telegrama.png" alt="Telegram" width="24">
+    </a>
+  </div>
+</div>
+
+
+<script>
+// Modo escuro
+function toggleDarkMode() {
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  if (isDark) {
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+}
+
+// Carregar tema salvo
+window.onload = () => {
+  const theme = localStorage.getItem("theme");
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  if (theme === "dark") {
+    body.classList.add("dark-mode");
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+};
+
+// Dropdown menu
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  if (dropdownToggle && dropdownContent) {
+    dropdownToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      dropdownContent.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!dropdownToggle.contains(e.target) && !dropdownContent.contains(e.target)) {
+        dropdownContent.classList.remove("show");
+      }
+    });
+  }
+});
+
+const floatb = document.getElementById('floatb');
+const floatbOptions = document.getElementById('floatbOptions');
+let timeout;
+
+floatb.addEventListener('click', () => {
+  floatbOptions.classList.add('show');
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    floatbOptions.classList.remove('show');
+  }, 3000);
+});
+
+window.onscroll = function() {
+  const btn = document.getElementById("scrollTopBtn");
+  if (!btn) return;
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById("scrollTopBtn");
+  if (!btn) return;
+  btn.addEventListener("click", function(e){
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdowns = document.querySelectorAll(".dropdown");
+  
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+    const content = dropdown.querySelector(".dropdown-content");
+    
+    if (toggle && content) {
+      toggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        content.classList.toggle("show");
+      });
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    dropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector(".dropdown-toggle");
+      const content = dropdown.querySelector(".dropdown-content");
+      if (toggle && content && !dropdown.contains(e.target)) {
+        content.classList.remove("show");
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
+
+
+

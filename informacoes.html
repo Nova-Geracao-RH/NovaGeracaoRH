@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="lgoogle.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nova Geração RH </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Conectamos profissionais e empresas com empatia, estratégia e tecnologia. Recrutamento e Seleção com foco humano e excelência." />
+  <meta name="keywords" content="Agência de Empregos, RH, Recrutamento, Seleção, Vagas, Reração RH, Guaíba, Porto Alegre, Carreira, Talentos" />
+  <meta name="author" content="Agência Exittus" />
+  <meta property="og:title" content="Nova Geração RH" />
+  <meta property="og:description" content="Somos especialistas em criar pontes sólidas entre profissionais e empresas, com foco humano e tecnologia." />
+  <meta property="og:image" content="slide1.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agenciaexittus.github.io/agenciaexittus/" />
+  <meta name="robots" content="index, follow" />
+ <style>
+
+/* Swiper geral */
+   
+.swiper {
+  margin-top: 140px; /* ajusta conforme a altura do nav + header */
+  padding-top: 0;
+  position: relative;
+  width: 100%;
+}
+
+/* Swiper-wrapper e slides */
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  background: #EFEFEF;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 280px;
+  box-sizing: border-box;
+  margin-right: 20px; /* adiciona espaço entre slides */
+}
+
+.swiper-container-wrapper {
+  margin-top: 0 !important; /* força sem espaço */
+  padding-top: 0 !important;
+}
+
+.header-nav-container {
+  position: fixed;  /* fixo na tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#slide1-img {
+  width: 100%;    /* ocupa toda a largura do container */
+  height: auto;   /* mantém proporção do GIF */
+  display: block; /* evita espaçamento embaixo */
+  margin: 0 auto; /* centraliza se não for 100% */
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+  color: #2b960a;
+}
+
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: #fbc02d;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.comment {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-weight: bold;
+  color: #333;
+}
+
+.swiper-pagination-bullet-active {
+  background: #333;
+}
+
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  padding-top: 170px; /* header + nav */
+}
+
+body.dark-mode {
+  background-color: #000004;
+  color: #ffffff;
+}
+
+/* Container que engloba header + nav */
+.header-nav-container {
+  position: fixed;  /* fixo na tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header {
+  background-color: #EFEFEF;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav {
+  background-color: #EFEFEF !important; /* fundo fixo para claro e escuro */
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+/* LINKS DO MENU */
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+nav a:hover,
+.dropdown:hover > a {
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  color: #009AB2;
+}
+
+/* Dropdown */
+.dropdown-content {
+  background-color: #EFEFEF !important;
+}
+
+.dropdown-content a {
+  background-color: #EFEFEF !important;
+  color: #009AB2;
+}
+
+/* Ajuste no body para não ficar conteúdo escondido atrás do topo fixo */
+body {
+  padding-top: 0px; /* soma aproximada da altura do header + nav */
+}
+
+/* Header */
+header {
+  background-color: #EFEFEF;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* MANTÉM logo esquerda, título centro, botão direita */
+  gap: 20px;
+  width: 100%;
+  color: #EFEFEF;
+  font-size: 1.8rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.header-left img {
+  height: 280px;
+  width: auto;
+  display: block;
+  margin-top: 11px;
+}
+
+.header-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px; /* VOCÊ CONTROLA: valores positivos movem para direita */
+  margin-right: auto;  /* deixa o resto do espaço à direita */
+  text-align: center;
+}
+
+.titulo-desktop {
+  display: block;
+  font-size: 2.8rem;
+  color: #013241;
+  font-weight: bold;
+  line-height: 1.7;
+  margin: 0; /* REMOVE qualquer margem */
+  text-align: center; /* FORÇA centralização */
+}
+
+.titulo-mobile {
+  display: none;
+}
+
+#darkModeToggle {
+  background: none;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+#darkModeToggle:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Nav e dropdown */
+nav {
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  background-color: #EFEFEF;
+  position: relative;
+}
+
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover,
+.dropdown:hover > a {
+  color: #013241;              /* muda a cor do texto */
+  font-weight: 700;              /* fica mais “negrito” */
+  background-color: #EFEFEF;   /* muda fundo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra moderna */
+  transform: scale(1.05);        /* dá um leve zoom */
+}
+
+nav a.ativo {
+  color: #000000;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #EFEFEF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-align: left;
+  color: #009AB2;
+  font-weight: normal;
+  background-color: #EFEFEF;
+}
+
+.dropdown-content a:hover {
+  background-color: #EFEFEF;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+body.dark-mode nav {
+  background-color: #000004;
+}
+
+/* Conteúdo */
+.conteudo {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: normal;
+  letter-spacing: normal;
+}
+
+.conteudo h1 {
+  text-align: center;
+  color: #009AB2;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(100,124,1,0.3);
+}
+
+.conteudo p {
+  margin-bottom: 1rem;
+}
+
+/* Botão fale conosco */
+.fale-conosco-btn {
+  display: inline-block;
+  background-color: #009AB2;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.fale-conosco-btn:hover {
+  background-color: #007C91; /* tom mais escuro no hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+.btn-container {
+  text-align: center; /* centraliza o botão */
+  margin: 20px 0;     /* opcional: espaço acima e abaixo */
+}
+#scrollTopBtn {
+  width: 45px; /* botão cima*/
+  height: 45px;
+  bottom: 15px;
+  right: 15px;
+}
+   
+/* Footer */
+footer {
+  background-color: #EFEFEF;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #007b8a;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+body.dark-mode footer {
+  background-color: #000004;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+footer small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
+}
+   /* Container de ícones */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center; /* centraliza no desktop */
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Ícones */
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.social img {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.social {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block; /* mantém alinhamento */
+}
+
+.social:hover {
+  border: none;
+  background: none;
+  filter: none; /* remove qualquer efeito do hover */
+}
+
+/* Botão flutuante WhatsApp */
+.whatsapp-button,
+.contact-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+}
+
+.whatsapp-button img,
+#contactBtn img,
+.contact-options a img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.plataformas-sociais {
+  margin-top: 30px; /* afasta o bloco de ícones um pouco mais para baixo */
+  text-align: center; /* centraliza os ícones horizontalmente */
+}
+
+.plataformas-sociais a img {
+  width: 50px;      /* tamanho do ícone */
+  height: 50px;     /* mantém proporção quadrada */
+  display: block;   
+  filter: none !important; /* remove qualquer efeito de preto e branco */
+}
+.plataformas-sociais a {
+  display: inline-block; 
+  margin: 0 15px;        
+  background: none;
+  border: none;
+  box-shadow: none;
+  filter: none !important; 
+  opacity: 1 !important;   
+  text-decoration: none; /* remove sublinhado de links */
+}
+
+/* Botão de voltar ao topo - Desktop */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgb(253, 253, 253);
+  background-image: url('cima.png');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#scrollTopBtn:hover {
+  background-color: rgb(0, 20, 204);    /* mesma cor de hover das redes sociais */
+  transform: scale(1.1);     /* efeito de aumentar levemente */
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+
+  /* Zera padding do body no mobile */
+body {
+  padding-top: 0;
+  margin: 0;
+}
+
+/* Títulos */
+.titulo-desktop {
+  display: none !important;
+}
+.titulo-mobile {
+  display: block !important;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Header mobile */
+.header-left img {
+  display: block;
+  margin: 30px auto 20px auto;
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+}
+
+.header-title-container {
+  margin-left: 0;
+  text-align: center;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-left: 0;
+  padding: 10px 0;
+}
+  
+/* Nav mobile */
+ nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 0.1rem 0;
+  margin: 0;
+}
+nav a {
+  font-size: 14px;
+  padding: 3px 5px;
+}
+
+/* Carrossel mobile */
+.swiper {
+  margin-top: 157px; /* aumenta para ficar abaixo do nav */
+  padding: 0;
+  background-color: #EFEFEF;
+}
+  
+.swiper-wrapper {
+  align-items: stretch;
+}
+.swiper-slide {
+  padding: 10px;
+  margin-right: 0;
+  min-height: 220px;
+}
+
+/* Botão dark mode mobile */
+#darkModeToggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
+  color: #013241;
+  border: 2px solid #013241;
+  background: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Botão voltar ao topo */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 25px;
+  left: 15px; /* canto esquerdo no mobile */
+  z-index: 9999;
+  width: 45px;
+  height: 45px;
+}
+#scrollTopBtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Rodapé mobile */
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+}
+  
+footer p {
+  margin: 0.3rem 0;
+}
+  
+footer small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* Redes sociais no rodapé */
+footer .redes-sociais {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+footer .redes-sociais a,
+footer .redes-sociais a img {
+  margin: 0 !important; /* zera margens externas */
+  padding: 0 !important; /* zera padding */
+}
+
+/* Redes sociais principais */
+.plataformas-sociais {
+  display: flex;
+  justify-content: center;
+  gap: 2px; /* diminui o espaço */
+  margin-top: 30px;
+  flex-wrap: nowrap;
+}
+.plataformas-sociais a,
+.plataformas-sociais a img {
+  margin: 0 !important; /* zera margens externas */
+  padding: 0 !important; /* zera padding */
+}
+.plataformas-sociais a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+  opacity: 1 !important;
+  text-decoration: none;
+}
+.plataformas-sociais a img {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  filter: none !important;
+}
+
+  /* Ícones gerais */
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #009AB2;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+  .social img {
+    width: 24px;
+    height: 24px;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+  /* Esconde menu desktop */
+  .nav-desktop {
+    display: none;
+}
+
+  /* Conteúdo mobile */
+  .conteudo p {
+    text-align: justify;
+    text-align-last: left;
+    word-spacing: -0.05em;
+    letter-spacing: 0.01em;
+    margin: 0 0 1em 0;
+    line-height: 1.6;
+    hyphens: auto;
+    overflow-wrap: break-word;
+}
+  .conteudo ul {
+    list-style: disc;
+    margin-left: 30px;
+    margin-bottom: 1em;
+}
+.conteudo ul li {
+  text-align: justify;
+  word-spacing: -0.1em;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5em 0;
+  line-height: 1.5;
+}
+.conteudo ul li::marker {
+  color: #009AB2;
+}
+.conteudo h1 {
+  text-align: center;
+}
+
+  /* Botões flutuantes (ex: WhatsApp) */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 15px;
+}
+   
+#cookie-banner {
+  display: none; /* ou flex só se quiser que apareça sem JS, mas o script já controla */
+  position: fixed;
+  bottom: 15px;
+  width: 90%;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  background: #fff; /* ou cor desejada */
+  z-index: 9999;
+}
+
+#cookie-banner button {
+  width: 60%;              /* botão ocupa toda largura */
+  padding: 0.5rem 0;        /* ajuste vertical */
+  font-size: 0.9rem;        /* fonte menor */
+}
+}   
+/* Container de ícones botão flutuante*/
+</style>
+</head>
+<body>
+
+<!-- Menu de navegação e Banner são fixos no scroll -->
+<div class="header-nav-container">
+<header>
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+  <div class="header-left">
+    <img src="lg.png" alt="Logo Agência Exittus" />
+    <div class="header-title-container">
+      <h1 class="titulo-desktop">Conectando Talentos</h1>
+    </div>
+  </div>
+</header>
+
+
+ <nav>
+    <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
+    <div class="dropdown-content">
+      <a href="global.html">Página Global</a>
+      <a href="index.html">Início</a>
+      <a href="home.html">Bem-vindos</a>
+      <a href="cultura.html">Cultura</a>
+    </div>
+  </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">CARREIRA</a>
+      <div class="dropdown-content">
+        <a href="candidato.html">Candidato</a>
+        <a href="vagas.html">Vagas</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">ATENDIMENTO</a>
+      <div class="dropdown-content">
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+
+<div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
+      <div class="dropdown-content">
+        <a href="informacoes.html" class="ativo">Inforações Gerais</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="lgbt.html">LGBT+</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
+        <a href="pcd.html">Pessoas com deficiência</a>
+      </div>
+    </div>
+
+ <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
+      <div class="dropdown-content">
+        <a href="blog.html">Blog</a>
+        <a href="facebook.html">Comunidade Facebook</a>
+        <a href="comunidade.html">Comunidade WhatsApp</a>
+      </div>
+    </div>
+
+  </nav>
+</div>
+
+<!-- Card de Informações Gerais -->
+<section class="card-informacoes" id="infoCard">
+  <span>INFORMAÇÕES</span>
+</section>
+
+<style>
+.card-informacoes {
+  position: relative;
+  margin: 120px auto 50px auto; 
+  width: 90vw;
+  max-width: 1000px;
+  height: 20vh;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #009AB2, #3358ff);
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(50px);
+  margin-top: 150px;
+}
+
+.contato-texto {
+  text-align: justify;
+  line-height: 1.7;
+  word-spacing: normal;
+  letter-spacing: normal;
+  font-size: 1rem;
+  color: #fff;
+  padding-top: 50px;
+}
+
+.card-informacoes.show {
+  opacity: 1;
+}
+
+.card-informacoes span {
+  position: relative;
+  animation: floatText 2s infinite alternate;
+}
+
+@keyframes floatText {
+  0% { top: 0px; }
+  100% { top: -5px; }
+}
+
+.contato-item {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .contato-texto {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .contato-texto { color: #000; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .contato-texto { color: #fff; }
+}
+
+/* Cards LGPD, LGBT, Cookies e PCD */
+.lgpd-card, .lgbt-card, .cookies-card, .pcd-card {
+  opacity: 0;
+  transition: opacity 1s ease;
+  width: 90vw;       /* largura igual ao card de Informações */
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  text-align: justify;
+  word-spacing: normal;
+  letter-spacing: normal;
+  color: white;
+}
+
+.lgpd-card { background: linear-gradient(135deg, #f72121, #3358ff); }
+.lgbt-card { background: linear-gradient(135deg, #FF6B6B, #FF4081); }
+.cookies-card { background: linear-gradient(135deg, #FFA500, #FFB347); }
+.pcd-card { background: linear-gradient(135deg, #6A1B9A, #AB47BC); }
+
+.lgpd-card.show,
+.lgbt-card.show,
+.cookies-card.show,
+.pcd-card.show {
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .lgpd-card, .lgbt-card, .cookies-card, .pcd-card {
+    margin: 10px auto; /* menos espaço acima e abaixo */
+    padding: 15px 20px;
+    font-size: 0.9rem;
+  }
+  .lgpd-card h2, .lgbt-card h2, .cookies-card h2, .pcd-card h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .lgpd-card p, .lgbt-card p, .cookies-card p, .pcd-card p {
+    font-size: 0.85rem;
+  }
+}
+</style>
+
+<!-- Bloco Contatos - Organizado -->
+<div class="contato-container">
+  <section class="contato-item">
+    <p class="contato-texto">
+      Na Nova Geração RH, respeitamos a Lei Geral de Proteção de Dados (LGPD) e todas as normas de privacidade e segurança da informação. Coletamos, armazenamos e processamos dados de forma ética, transparente e segura, garantindo que informações pessoais e profissionais sejam utilizadas apenas para finalidades legítimas, como recrutamento, seleção e comunicação de oportunidades.
+
+      Nossa Política de Privacidade descreve como tratamos os dados, incluindo como os candidatos podem acessar, corrigir ou solicitar a exclusão das suas informações. O IPCD (Indicador de Proteção e Controle de Dados) reflete nosso compromisso com boas práticas de gestão e proteção de dados corporativos e individuais.
+
+      Aplicamos também políticas de inclusão e diversidade, garantindo igualdade de oportunidades para Pessoas com Deficiência (PCD) e membros da comunidade LGBT+, combatendo qualquer tipo de preconceito ou discriminação.
+
+      O CAM (Controle de Acesso a Materiais) garante que apenas pessoas autorizadas acessem informações sensíveis, mantendo a confidencialidade.
+    </p>
+  </section>
+</div>
+
+<!-- Card LGPD -->
+<div class="lgpd-card" id="lgpdCard">
+  <h2>Lei Geral de Proteção de Dados (LGPD)</h2>
+  <p>
+    Respeitamos a LGPD e asseguramos o tratamento ético, seguro e transparente dos dados, adotando políticas de privacidade claras e promovendo a inclusão de Pessoas com Deficiência (PCD) e da comunidade LGBT+. O IPCD demonstra nosso compromisso com as melhores práticas de gestão e proteção de informações.
+  </p>
+</div>
+
+<!-- Card LGBT -->
+<div class="lgbt-card" id="lgbtCard">
+  <h2>Inclusão LGBT+</h2>
+  <p>
+    Promovemos respeito e igualdade para a comunidade LGBT+, garantindo um ambiente livre de preconceito e discriminação. Nossas políticas de inclusão reforçam nosso compromisso com diversidade e ética no tratamento de todos os colaboradores e candidatos.
+  </p>
+</div>
+
+<!-- Card Política de Cookies -->
+<div class="cookies-card" id="cookiesCard">
+  <h2>Política de Cookies</h2>
+  <p>
+    Nossa Política de Cookies garante transparência sobre o uso de dados coletados através do navegador. Explicamos como cookies e tecnologias similares são utilizados para melhorar a experiência do usuário, personalizar conteúdos e analisar desempenho do site.
+  </p>
+</div>
+
+<!-- Card PCD -->
+<div class="pcd-card" id="pcdCard">
+  <h2>Pessoas com Deficiência (PCD)</h2>
+  <p>
+    Garantimos igualdade de oportunidades para Pessoas com Deficiência, promovendo inclusão e acessibilidade em todas as etapas de recrutamento e seleção. Combate a qualquer forma de preconceito ou discriminação é prioridade, respeitando a diversidade e direitos individuais.
+  </p>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const cards = document.querySelectorAll(".card-informacoes, .lgpd-card, .lgbt-card, .cookies-card, .pcd-card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+});
+</script>
+
+ <!-- COMEÇO DO FLOOTER-->
+  <div class="btn-container">
+    <a href="contato.html" class="fale-conosco-btn">Fale Conosco</a>
+</div>
+
+  
+ <footer>
+  <p><strong>CNPJ:</strong>-/p>
+  <p><strong>Telefone:</strong>(51) 99697-6579</p>
+  <p><strong>E-mail:</strong> Exemplo@gmail.com</p>
+  <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
+ <!-- Ícones de redes sociais -->
+<div class="plataformas-sociais">
+  <a href="https://www.facebook.com" target="_blank" class="social facebook">
+    <img src="facebook1.png" alt="Facebook">
+  </a>
+  <a href="https://www.instagram.com" target="_blank" class="social instagram">
+    <img src="instagram1.png" alt="Instagram">
+  </a>
+  <a href="https://www.linkedin.com" target="_blank" class="social linkedin">
+    <img src="linkedin1.png" alt="LinkedIn">
+  </a>
+  <a href="https://www.youtube.com" target="_blank" class="social youtube">
+    <img src="youtube1.png" alt="YouTube">
+  </a>
+</div>
+
+  </footer>
+
+
+<style>
+
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+</style>
+
+<script>
+function toggleDarkMode() {
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  // Alterar texto e cor do botão
+  if (isDark) {
+    button.textContent = "☀️";
+    button.style.color = "#013241"; // cor para modo escuro
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241"; // cor para modo claro
+    button.style.borderColor = "#013241";
+  }
+}
+
+window.onload = () => {
+  const theme = localStorage.getItem("theme");
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  if (theme === "dark") {
+    body.classList.add("dark-mode");
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+};
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
+    const dropdownContent = document.querySelector(".dropdown-content");
+
+    if (dropdownToggle && dropdownContent) {
+      dropdownToggle.addEventListener("click", function (event) {
+        event.preventDefault();
+        dropdownContent.classList.toggle("show");
+      });
+
+      // Fecha o menu se clicar fora
+      document.addEventListener("click", function (e) {
+        if (!dropdownToggle.contains(e.target) && !dropdownContent.contains(e.target)) {
+          dropdownContent.classList.remove("show");
+        }
+      });
+    }
+  });
+  </script>
+<!-- Botão flutuante principal com ícone -->
+<div class="floatb-container">
+  <button class="floatb" id="floatb">
+    <img src="user.png" alt="Principal" width="30">
+  </button>
+
+  <!-- Botões escondidos inicialmente -->
+  <div class="floatb-options" id="floatbOptions">
+    <a href="https://wa.me/SEU_NUMERO1" target="_blank" class="floatb-btn">
+      <img src="whatsapp.png" alt="WhatsApp 1" width="24"> 
+    </a>
+    <a href="https://wa.me/SEU_NUMERO2" target="_blank" class="floatb-btn">
+      <img src="whatsapp2.png" alt="WhatsApp 2" width="24"> 
+    </a>
+    <a href="tel:+5511999999999" class="floatb-btn">
+      <img src="ligação.png" alt="Ligar" width="24"> 
+    </a>
+    <a href="https://t.me/SEU_USUARIO" target="_blank" class="floatb-btn">
+      <img src="telegrama.png" alt="Telegram" width="24"> 
+    </a>
+  </div>
+</div>
+
+<style>
+.floatb-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Botão principal */
+.floatb {
+  background-color: #009AB2;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  outline: none;            /* remove o contorno de foco */
+  border: none;             /* remove qualquer borda */
+}
+
+/* Remove foco azul ao clicar ou tabular */
+.floatb:focus {
+  outline: none !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important; /* mantém sombra normal */
+  
+}
+.floatb:hover {
+  background-color: #007b8a;
+}
+.floatb {
+  outline: none !important;
+}
+
+
+.floatb:hover {
+  background-color: #007b8a;
+}
+
+.floatb-options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.floatb-options.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.floatb-btn {
+  background-color: #009AB2;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;      /* centraliza verticalmente */
+  justify-content: center;  /* centraliza horizontalmente */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.floatb-btn:hover {
+  background-color: #007b8a;
+}
+.floatb img {
+  width: 40px !important;  /* força largura */
+  height: 40px !important; /* força altura */
+}
+
+.floatb-btn img {
+  display: block;
+}
+</style>
+
+
+<script>
+// Modo escuro
+function toggleDarkMode() {
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  if (isDark) {
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+}
+
+// Carregar tema salvo
+window.onload = () => {
+  const theme = localStorage.getItem("theme");
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  if (theme === "dark") {
+    body.classList.add("dark-mode");
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+};
+
+// Dropdown menu
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  if (dropdownToggle && dropdownContent) {
+    dropdownToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      dropdownContent.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!dropdownToggle.contains(e.target) && !dropdownContent.contains(e.target)) {
+        dropdownContent.classList.remove("show");
+      }
+    });
+  }
+});
+
+// Botão flutuante
+const floatb = document.getElementById('floatb');
+const floatbOptions = document.getElementById('floatbOptions');
+let timeout;
+
+floatb.addEventListener('click', () => {
+  floatbOptions.classList.add('show');
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    floatbOptions.classList.remove('show');
+  }, 3000);
+});
+
+// Formulário de contato
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  const form = this;
+  const submitBtn = form.querySelector('.submit-btn');
+  const successMessage = document.getElementById('successMessage');
+  
+  // Desabilitar botão durante envio
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
+  
+  // Se usando Formspree ou similar, não preventDefault
+  // O formulário será enviado normalmente
+  
+  // Para mostrar mensagem após envio bem-sucedido
+  // (isso funcionará com redirecionamento do Formspree)
+  setTimeout(() => {
+    successMessage.style.display = 'block';
+    form.reset();
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Enviar Mensagem';
+    
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 5000);
+  }, 1000);
+});
+
+// Máscara para telefone
+document.getElementById('telefone').addEventListener('input', function(e) {
+  let value = e.target.value.replace(/\D/g, '');
+  if (value.length <= 11) {
+    value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    if (value.length < 14) {
+      value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+    }
+  }
+  e.target.value = value;
+});
+
+// Cookies
+document.getElementById('accept-cookies').addEventListener('click', function() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookiesAccepted', 'true');
+});
+
+// Verificar se o usuário já aceitou cookies
+window.addEventListener('load', () => {
+    if(localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'none';
+    } else {
+        document.getElementById('cookie-banner').style.display = 'flex';
+    }
+});
+</script>
+
+</body>
+</html>
+
+</script>
+</body>
+</html>

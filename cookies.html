@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Cookies - Nova Geração RH | Privacidade e Segurança</title>
+  <meta name="description" content="Saiba como a Nova Geração RH utiliza cookies para melhorar sua experiência no site. Informações sobre coleta de dados, privacidade e personalização." />
+  <meta name="keywords" content="Política de Cookies, Cookies, Privacidade, Segurança, Nova Geração RH, Experiência do Usuário, Coleta de Dados, Personalização" />
+  <link rel="icon" type="image/png" href="lgoogle.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Política de Cookies - Nova Geração RH | Privacidade e Segurança" />
+  <meta property="og:description" content="Entenda como usamos cookies e tecnologias semelhantes para garantir melhor experiência, personalização e segurança no site da Nova Geração RH." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="link-da-imagem.jpg" />
+  <meta property="og:url" content="https://www.seusite.com.br/cookies" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Política de Cookies - Nova Geração RH | Privacidade e Segurança" />
+  <meta name="twitter:description" content="Saiba como a Nova Geração RH utiliza cookies para personalizar sua experiência e proteger seus dados no site." />
+  <meta name="twitter:image" content="link-da-imagem.jpg" />
+  <style>
+/* Base do layout original */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  padding-top: 170px;
+}
+
+body.dark-mode {
+  background-color: #000004;
+  color: #ffffff;
+}
+
+/* Header fixo */
+.header-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header {
+  background-color: #EFEFEF;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  color: #EFEFEF;
+  font-size: 1.8rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.header-left img {
+  height: 280px;
+  width: auto;
+  display: block;
+  margin-top: 11px;
+}
+
+.header-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: auto;
+  text-align: center;
+}
+
+.titulo-desktop {
+  display: block;
+  font-size: 2.8rem;
+  color: #013241;
+  font-weight: bold;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+
+.titulo-mobile {
+  display: none;
+}
+
+#darkModeToggle {
+  background: none;
+  border: 2px solid #013241;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #013241;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+/* Navegação */
+nav {
+  background-color: #EFEFEF !important;
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+nav a:hover,
+.dropdown:hover > a {
+  color: #013241;
+  font-weight: 700;
+  background-color: #EFEFEF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+nav a.ativo {
+  color: #000000;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #EFEFEF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-align: left;
+  color: #009AB2;
+  font-weight: normal;
+  background-color: #EFEFEF;
+}
+
+.dropdown-content a:hover {
+  background-color: #EFEFEF;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hero Section Cookies */
+.hero-lgpd {
+  background: linear-gradient(135deg, #009AB2 0%, #013241 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-lgpd::before {
+  content: '🍪';
+  position: absolute;
+  font-size: 15rem;
+  opacity: 0.1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-lgpd h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-lgpd p {
+  font-size: 1.3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container Principal */
+.lgpd-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Cards de Conteúdo */
+.content-card {
+  background: #EFEFEF;
+  border-radius: 15px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border-left: 5px solid #009AB2;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.content-card h2 {
+  color: #013241;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.content-card h3 {
+  color: #009AB2;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.content-card p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.icon-large {
+  font-size: 2.5rem;
+}
+
+/* Lista Moderna */
+.modern-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.modern-list li {
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  background: rgba(0, 154, 178, 0.05);
+  border-left: 4px solid #009AB2;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.modern-list li:hover {
+  background: rgba(0, 154, 178, 0.1);
+  transform: translateX(5px);
+}
+
+.modern-list li strong {
+  color: #013241;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+/* Destaque de Compromisso */
+.commitment-box {
+  background: linear-gradient(135deg, #009AB2 0%, #013241 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.commitment-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.commitment-box p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Grid de Princípios */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 40px 0;
+}
+
+.principle-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 4px solid #009AB2;
+}
+
+.principle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.principle-card .emoji {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.principle-card h4 {
+  color: #013241;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.principle-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Links Oficiais */
+.official-links {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 0;
+}
+
+.official-links h3 {
+  color: #013241;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.official-links a {
+  display: inline-block;
+  color: #009AB2;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 25px;
+  background: white;
+  border-radius: 8px;
+  margin: 10px 10px 10px 0;
+  transition: all 0.3s ease;
+  border: 2px solid #009AB2;
+}
+
+.official-links a:hover {
+  background: #009AB2;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,154,178,0.3);
+}
+
+/* Alerta Ético */
+.ethics-alert {
+  background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 30px 0;
+  box-shadow: 0 8px 20px rgba(201, 42, 42, 0.3);
+}
+
+.ethics-alert h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.ethics-alert p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Footer */
+footer {
+  background-color: #EFEFEF;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #007b8a;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+body.dark-mode footer {
+  background-color: #000004;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+footer small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* Modo Escuro */
+body.dark-mode .content-card {
+  background-color: #1a1a1a;
+  border-left-color: #009AB2;
+}
+
+body.dark-mode .content-card h2 {
+  color: #009AB2;
+}
+
+body.dark-mode .content-card h3 {
+  color: #00c3de;
+}
+
+body.dark-mode .content-card p {
+  color: #ccc;
+}
+
+body.dark-mode .modern-list li {
+  background: rgba(0, 154, 178, 0.1);
+  color: #ccc;
+}
+
+body.dark-mode .modern-list li strong {
+  color: #009AB2;
+}
+
+body.dark-mode .principle-card {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .principle-card h4 {
+  color: #009AB2;
+}
+
+body.dark-mode .principle-card p {
+  color: #aaa;
+}
+
+body.dark-mode .official-links {
+  background-color: #0a0a0a;
+}
+
+body.dark-mode .official-links h3 {
+  color: #009AB2;
+}
+
+body.dark-mode .official-links a {
+  background-color: #1a1a1a;
+  color: #009AB2;
+}
+
+body.dark-mode .official-links a:hover {
+  background-color: #009AB2;
+  color: white;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  body {
+    padding-top: 0;
+  }
+
+  .titulo-desktop {
+    display: none !important;
+  }
+  
+  .titulo-mobile {
+    display: block !important;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .header-left img {
+    display: block;
+    margin: 30px auto 20px auto;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+  }
+
+  .header-title-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.1rem 0;
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 3px 5px;
+  }
+
+  #darkModeToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+  }
+
+  .hero-lgpd {
+    padding: 40px 20px;
+    margin-top: 165px;
+  }
+
+  .hero-lgpd h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-lgpd p {
+    font-size: 1rem;
+  }
+
+  .lgpd-container {
+    padding: 30px 15px;
+  }
+
+  .content-card {
+    padding: 25px 20px;
+  }
+
+  .content-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .commitment-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.plataformas-sociais {
+  margin-top: 30px;
+  text-align: center;
+  gap: 2px;
+}
+
+.plataformas-sociais a {
+  display: inline-block;
+  margin: 0 15px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  filter: none !important;
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+.plataformas-sociais a img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  filter: none !important;
+}
+
+.floatb-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.floatb {
+  background-color: #009AB2;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  outline: none !important;
+  border: none;
+}
+
+.floatb:hover {
+  background-color: #007b8a;
+}
+
+.floatb-options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.floatb-options.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.floatb-btn {
+  background-color: #009AB2;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.floatb-btn:hover {
+  background-color: #007b8a;
+}
+
+.floatb img {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.floatb-btn img {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .plataformas-sociais a img {
+    width: 30px;
+    height: 30px;
+    margin: -5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .plataformas-sociais a img {
+    width: 30px;
+    height: 30px;
+    margin: -5px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Menu de navegação fixo -->
+<div class="header-nav-container">
+<header>
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+  <div class="header-left">
+    <img src="lg.png" alt="Logo Nova Geração RH" />
+    <div class="header-title-container">
+      <h1 class="titulo-desktop">Conectando Talentos</h1>
+    </div>
+  </div>
+</header>
+
+<nav>
+    <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
+    <div class="dropdown-content">
+      <a href="global.html">Página Global</a>
+      <a href="index.html">Início</a>
+      <a href="home.html" >Bem-vindos</a>
+      <a href="cultura.html">Cultura</a>
+    </div>
+  </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">CARREIRA</a>
+      <div class="dropdown-content">
+        <a href="candidato.html">Candidato</a>
+        <a href="vagas.html">Vagas</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">ATENDIMENTO</a>
+      <div class="dropdown-content">
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+
+   <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
+      <div class="dropdown-content">
+        <a href="informacoes.html">Inforações Gerais</a>
+        <a href="cookies.html" class="ativo">Cookies</a>
+        <a href="lgbt.html">LGBT+</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
+        <a href="pcd.html">Pessoas com deficiência</a>
+      </div>
+    </div>
+
+ <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
+      <div class="dropdown-content">
+        <a href="blog.html">Blog</a>
+        <a href="facebook.html">Comunidade Facebook</a>
+        <a href="comunidade.html">Comunidade WhatsApp</a>
+      </div>
+    </div>
+
+
+    <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
+    <div class="dropdown-content">
+      <a href="servicos.html">Serviços</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </div>
+</nav>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-lgpd">
+  <h1>Política de Cookies</h1>
+  <p>Transparência total sobre como utilizamos cookies para melhorar sua experiência de navegação.</p>
+</section>
+
+<!-- Conteúdo Principal -->
+<div class="lgpd-container">
+
+  <!-- O que são Cookies -->
+  <div class="content-card">
+    <h2><span class="icon-large">🍪</span> O que são Cookies?</h2>
+    <p>Antes de mais nada, vamos desmistificar: <strong>cookies não são biscoitos digitais, vírus ou programas maliciosos</strong>. São simplesmente pequenos arquivos de texto que os sites armazenam no seu navegador.</p>
+    
+    <p>Imagine cookies como <strong>lembretes digitais</strong>. Quando você visita um site, ele pode deixar um "bilhete" no seu navegador dizendo coisas como: "Esse usuário já esteve aqui antes", "Ele prefere o modo escuro", "Ele colocou esses itens no carrinho" ou "Ele já fez login".</p>
+
+    <p>Os cookies foram inventados em 1994 por Lou Montulli, um programador que trabalhava na Netscape (lembra dela?). O objetivo inicial era simples: fazer com que os sites se "lembrassem" dos visitantes entre uma página e outra.</p>
+
+    <h3>🔍 Como Funcionam Tecnicamente?</h3>
+    <p>Quando você acessa um site:</p>
+    <ol style="padding-left: 20px; line-height: 1.8;">
+      <li>O servidor do site envia um cookie para o seu navegador</li>
+      <li>Seu navegador armazena esse cookie localmente (no seu dispositivo)</li>
+      <li>Nas próximas vezes que você visitar o mesmo site, seu navegador envia o cookie de volta</li>
+      <li>O site lê o cookie e "lembra" de você e suas preferências</li>
+    </ol>
+
+    <p>É um processo totalmente passivo - os cookies <strong>não podem acessar outros arquivos</strong> no seu computador, não podem instalar programas e não são vírus. Eles apenas armazenam informações que o próprio site colocou neles.</p>
+  </div>
+
+  <!-- Tipos de Cookies -->
+  <div class="content-card">
+    <h2><span class="icon-large">📋</span> Tipos de Cookies: Nem Todos São Iguais</h2>
+    <p>Existem diferentes tipos de cookies, cada um com finalidades específicas:</p>
+    
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="emoji">🔐</div>
+        <h4>Cookies Essenciais</h4>
+        <p>Necessários para o funcionamento básico do site. Sem eles, você não conseguiria fazer login, navegar com segurança ou usar funções fundamentais. <strong>Não podem ser desativados.</strong></p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">⚙️</div>
+        <h4>Cookies de Funcionalidade</h4>
+        <p>Lembram suas preferências como idioma, tema escuro/claro, tamanho de fonte, localização. Melhoram sua experiência personalizada.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">📊</div>
+        <h4>Cookies de Desempenho</h4>
+        <p>Coletam informações anônimas sobre como você usa o site: páginas mais visitadas, tempo de permanência, erros encontrados. Ajudam a melhorar o site.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">📈</div>
+        <h4>Cookies Analíticos</h4>
+        <p>Usados por ferramentas como Google Analytics para entender padrões de navegação, origem do tráfego e comportamento agregado dos usuários.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">🎯</div>
+        <h4>Cookies de Marketing</h4>
+        <p>Rastreiam sua atividade para exibir anúncios relevantes. São os mais "invasivos" e geralmente vêm de terceiros. Podem ser desativados.</p>
+      </div>
+
+      <div class="principle-card">
+        <div class="emoji">🔗</div>
+        <h4>Cookies de Terceiros</h4>
+        <p>Criados por domínios diferentes do site que você está visitando (ex: redes sociais, plataformas de anúncios). Podem rastrear você entre diferentes sites.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Duração dos Cookies -->
+  <div class="content-card">
+    <h2><span class="icon-large">⏱️</span> Duração: Cookies Temporários vs Permanentes</h2>
+    
+    <h3>🔄 Cookies de Sessão (Session Cookies)</h3>
+    <p>São temporários e <strong>desaparecem quando você fecha o navegador</strong>. Usados principalmente para:</p>
+    <ul class="modern-list">
+      <li>Manter você logado enquanto navega entre páginas</li>
+      <li>Guardar itens no carrinho de compras durante a visita</li>
+      <li>Lembrar suas escolhas em formulários de várias páginas</li>
+    </ul>
+
+    <h3>💾 Cookies Persistentes (Permanent Cookies)</h3>
+    <p>Ficam armazenados no seu dispositivo por um período determinado (dias, meses ou até anos). Exemplos de uso:</p>
+    <ul class="modern-list">
+      <li>Manter você logado automaticamente em visitas futuras ("Lembrar-me")</li>
+      <li>Guardar preferências de idioma e tema</li>
+      <li>Rastrear seu comportamento para análises de longo prazo</li>
+      <li>Exibir anúncios baseados em interesses identificados ao longo do tempo</li>
+    </ul>
+
+    <p>Cada cookie tem uma "data de validade". Quando ela expira, o navegador automaticamente deleta o cookie.</p>
+  </div>
+
+  <!-- Para que servem -->
+  <div class="content-card">
+    <h2><span class="icon-large">🎯</span> Para Que Realmente Servem os Cookies?</h2>
+    <p>Cookies tornam a internet moderna possível. Sem eles, sua experiência online seria extremamente frustrante:</p>
+    
+    <ul class="modern-list">
+      <li>
+        <strong>🔐 Autenticação:</strong> Manter você logado. Sem cookies, você teria que fazer login novamente a cada clique.
+      </li>
+      <li>
+        <strong>🛒 Carrinho de Compras:</strong> Guardar produtos que você selecionou enquanto continua navegando.
+      </li>
+      <li>
+        <strong>🎨 Personalização:</strong> Lembrar se você prefere modo escuro, tamanho de fonte maior, idioma específico.
+      </li>
+      <li>
+        <strong>📊 Análise de Uso:</strong> Entender quais páginas são mais visitadas, onde usuários encontram dificuldades, qual conteúdo é mais relevante.
+      </li>
+      <li>
+        <strong>🔒 Segurança:</strong> Detectar atividades suspeitas, prevenir fraudes, validar sessões legítimas.
+      </li>
+      <li>
+        <strong>🎯 Publicidade Relevante:</strong> Exibir anúncios relacionados aos seus interesses (em vez de completamente aleatórios).
+      </li>
+      <li>
+        <strong>📈 Otimização:</strong> Testar diferentes versões de páginas (testes A/B) para melhorar a experiência do usuário.
+      </li>
+      <li>
+        <strong>🌐 Funcionalidades Sociais:</strong> Widgets de redes sociais, botões de compartilhamento, comentários integrados.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Nosso Uso -->
+  <div class="commitment-box">
+    <h2>🍪 Como a Nova Geração RH Usa Cookies</h2>
+    <p>Transparência total: nós utilizamos cookies, mas de forma ética, transparente e sempre respeitando sua privacidade.</p>
+    <p>Você tem total controle sobre quais cookies aceita ou rejeita.</p>
+  </div>
+
+  <!-- Cookies que Usamos -->
+  <div class="content-card">
+    <h2><span class="icon-large">📝</span> Cookies que Utilizamos (ou Podemos Utilizar)</h2>
+    
+    <h3>✅ Cookies Estritamente Necessários</h3>
+    <p>Estes cookies são essenciais e <strong>não podem ser desativados</strong>:</p>
+    <ul class="modern-list">
+      <li>
+        <strong>Cookies de Sessão:</strong> Para manter você navegando com segurança entre as páginas.
+      </li>
+      <li>
+        <strong>Cookies de Segurança:</strong> Protegem contra ataques CSRF (Cross-Site Request Forgery) e outras ameaças.
+      </li>
+      <li>
+        <strong>Cookies de Balanceamento:</strong> Direcionam seu tráfego para os servidores corretos.
+      </li>
+    </ul>
+
+    <h3>⚙️ Cookies de Preferências</h3>
+    <p>Melhoram sua experiência ao lembrar suas escolhas:</p>
+    <ul class="modern-list">
+      <li>
+        <strong>Tema (Modo Escuro/Claro):</strong> Salvamos sua preferência para que você não precise selecionar novamente em cada visita.
+      </li>
+      <li>
+        <strong>Consentimento de Cookies:</strong> Lembramos que você já aceitou (ou rejeitou) nosso aviso de cookies.
+      </li>
+      <li>
+        <strong>Preferências de Acessibilidade:</strong> Configurações especiais que você tenha ativado.
+      </li>
+    </ul>
+
+    <h3>📊 Cookies Analíticos (Uso Eventual)</h3>
+    <p>Caso venham a ser implementados, serão para entender como melhorar o site:</p>
+    <ul class="modern-list">
+      <li>
+        <strong>Google Analytics:</strong> Dados agregados e anônimos sobre visitantes, páginas mais acessadas, tempo de permanência.
+      </li>
+      <li>
+        <strong>Análise de Desempenho:</strong> Identificar páginas lentas ou com erros.
+      </li>
+      <li>
+        <strong>Origem do Tráfego:</strong> Entender como os visitantes chegaram ao site (busca orgânica, redes sociais, links diretos).
+      </li>
+    </ul>
+
+    <p><strong>⚠️ Importante:</strong> Todos os cookies analíticos que eventualmente usarmos coletam apenas dados agregados e anônimos. Não identificamos usuários individuais.</p>
+
+    <h3>🎯 Cookies de Marketing (Não Utilizados Atualmente)</h3>
+    <p>No momento, <strong>NÃO utilizamos cookies de publicidade ou rastreamento para fins de marketing</strong>. Caso isso mude no futuro, você será informado e precisará consentir explicitamente.</p>
+
+    <h3>🔗 Cookies de Terceiros</h3>
+    <p>Alguns serviços que utilizamos podem definir seus próprios cookies:</p>
+    <ul class="modern-list">
+      <li>
+        <strong>Redes Sociais:</strong> Se você interage com botões de compartilhamento ou widgets sociais.
+      </li>
+      <li>
+        <strong>Vídeos Incorporados:</strong> Plataformas como YouTube podem definir cookies quando você assiste vídeos.
+      </li>
+      <li>
+        <strong>Serviços de Mapas:</strong> Google Maps ou similares ao exibir localizações.
+      </li>
+    </ul>
+
+    <p>Não temos controle sobre esses cookies de terceiros. Recomendamos que você consulte as políticas de privacidade desses serviços.</p>
+  </div>
+
+  <!-- Privacidade e Segurança -->
+  <div class="content-card">
+    <h2><span class="icon-large">🔒</span> Cookies e Sua Privacidade</h2>
+    
+    <h3>✅ O que os Cookies NÃO Fazem</h3>
+    <p>Vamos acabar com alguns mitos comuns:</p>
+    <ul class="modern-list">
+      <li>❌ <strong>Não são vírus ou malware</strong> - São apenas arquivos de texto simples</li>
+      <li>❌ <strong>Não podem acessar seu disco rígido</strong> - Só podem ler/escrever informações que eles mesmos criaram</li>
+      <li>❌ <strong>Não podem executar programas</strong> - São dados passivos, não código executável</li>
+      <li>❌ <strong>Não podem roubar senhas</strong> - A menos que um site mal-intencionado as armazene (o que seria extremamente inseguro)</li>
+      <li>❌ <strong>Não podem ver outros cookies</strong> - Cada site só acessa seus próprios cookies</li>
+      <li>❌ <strong>Não podem acessar suas câmeras ou microfone</strong> - Isso requer permissões do navegador completamente diferentes</li>
+    </ul>
+
+    <h3>⚠️ Riscos Reais (Mas Gerenciáveis)</h3>
+    <p>Os únicos riscos reais de cookies são:</p>
+    <ul class="modern-list">
+      <li>
+        <strong>Rastreamento:</strong> Cookies de terceiros podem rastrear você entre diferentes sites, criando perfis de comportamento.
+      </li>
+      <li>
+        <strong>Invasão de Privacidade:</strong> Anunciantes podem saber muito sobre seus interesses e hábitos online.
+      </li>
+      <li>
+        <strong>Cookies de Sessão Roubados:</strong> Em redes Wi-Fi públicas não seguras, hackers podem interceptar cookies de sessão (use HTTPS sempre!).
+      </li>
+    </ul>
+
+    <p><strong>Solução:</strong> Use navegação privada, bloqueadores de rastreadores, e gerencie suas preferências de cookies regularmente.</p>
+  </div>
+
+  <!-- LGPD e Cookies -->
+  <div class="content-card">
+    <h2><span class="icon-large">⚖️</span> Cookies e a Lei (LGPD)</h2>
+    <p>A <strong>Lei Geral de Proteção de Dados (LGPD)</strong> brasileira exige que sites sejam transparentes sobre o uso de cookies:</p>
+    
+    <ul class="modern-list">
+      <li>
+        <strong>📢 Informação Clara:</strong> Sites devem informar que usam cookies e para quê.
+      </li>
+      <li>
+        <strong>✅ Consentimento:</strong> Para cookies não essenciais, o site precisa pedir sua permissão.
+      </li>
+      <li>
+        <strong>🎛️ Controle:</strong> Você deve poder aceitar, rejeitar ou personalizar quais cookies aceita.
+      </li>
+      <li>
+        <strong>📋 Detalhamento:</strong> Sites devem explicar cada tipo de cookie usado.
+      </li>
+      <li>
+        <strong>🔄 Revogação:</strong> Você pode mudar de ideia a qualquer momento.
+      </li>
+    </ul>
+
+    <p>Por isso você vê tantos avisos de cookies atualmente - não é porque os sites querem irritar você, mas porque a lei exige transparência!</p>
+  </div>
+
+  <!-- Como Gerenciar -->
+  <div class="content-card">
+    <h2><span class="icon-large">🛠️</span> Como Gerenciar e Controlar Cookies</h2>
+    <p>Você tem <strong>total controle</strong> sobre os cookies. Aqui está como gerenciá-los:</p>
+    
+    <h3>🌐 No Navegador</h3>
+    <p>Todos os navegadores modernos permitem gerenciar cookies:</p>
+    
+    <ul class="modern-list">
+      <li>
+        <strong>Google Chrome:</strong> Configurações → Privacidade e Segurança → Cookies e outros dados de sites
+      </li>
+      <li>
+        <strong>Firefox:</strong> Opções → Privacidade e Segurança → Cookies e dados de sites
+      </li>
+      <li>
+        <strong>Safari:</strong> Preferências → Privacidade → Gerenciar dados de sites
+      </li>
+      <li>
+        <strong>Edge:</strong> Configurações → Privacidade, pesquisa e serviços → Cookies e permissões de site
+      </li>
+      <li>
+        <strong>Brave:</strong> Configurações → Escudos → Cookies e outros dados de sites
+      </li>
+    </ul>
+
+    <h3>🎯 Opções de Gerenciamento</h3>
+    <ul class="modern-list">
+      <li>
+        <strong>Bloquear Todos os Cookies:</strong> Máxima privacidade, mas muitos sites não funcionarão corretamente.
+      </li>
+      <li>
+        <strong>Bloquear Apenas Cookies de Terceiros:</strong> Equilíbrio entre funcionalidade e privacidade. Recomendado!
+      </li>
+      <li>
+        <strong>Permitir Todos os Cookies:</strong> Sites funcionam perfeitamente, mas com menos privacidade.
+      </li>
+      <li>
+        <strong>Excluir Cookies ao Fechar o Navegador:</strong> Boa opção intermediária.
+      </li>
+      <li>
+        <strong>Modo de Navegação Privada/Anônima:</strong> Não salva cookies após fechar a janela.
+      </li>
+    </ul>
+
+    <h3>🔧 Ferramentas Úteis</h3>
+    <ul class="modern-list">
+      <li>
+        <strong>Extensões de Bloqueio:</strong> Privacy Badger, uBlock Origin, Ghostery
+      </li>
+      <li>
+        <strong>Navegadores Focados em Privacidade:</strong> Brave, DuckDuckGo Browser, Tor
+      </li>
+      <li>
+        <strong>VPN:</strong> Adiciona camada extra de privacidade (mas não bloqueia cookies)
+      </li>
+    </ul>
+
+    <h3>⚠️ Consequências de Bloquear Cookies</h3>
+    <p>Se você bloquear todos os cookies, pode enfrentar:</p>
+    <ul class="modern-list">
+      <li>Não conseguir fazer login em sites</li>
+      <li>Perder itens do carrinho de compras</li>
+      <li>Ter que reconfigrar preferências toda vez</li>
+      <li>Sites não funcionarem corretamente</li>
+      <li>Perder histórico de navegação e recomendações personalizadas</li>
+    </ul>
+  </div>
+
+  <!-- Como Deletar Cookies -->
+  <div class="content-card">
+    <h2><span class="icon-large">🗑️</span> Como Deletar Cookies Existentes</h2>
+    <p>Se você quer "limpar a casa" e deletar cookies já armazenados:</p>
+    
+    <h3>🖥️ Chrome</h3>
+    <ol style="padding-left: 20px; line-height: 2;">
+      <li>Clique nos três pontos no canto superior direito</li>
+      <li>Configurações → Privacidade e Segurança</li>
+      <li>Limpar dados de navegação</li>
+      <li>Selecione "Cookies e outros dados de sites"</li>
+      <li>Escolha o período (última hora, 24h, 7 dias, 4 semanas, sempre)</li>
+      <li>Clique em "Limpar dados"</li>
+    </ol>
+
+    <h3>🦊 Firefox</h3>
+    <ol style="padding-left: 20px; line-height: 2;">
+      <li>Menu → Opções → Privacidade e Segurança</li>
+      <li>Role até "Cookies e dados de sites"</li>
+      <li>Clique em "Limpar dados"</li>
+      <li>Marque "Cookies e dados de sites"</li>
+      <li>Clique em "Limpar"</li>
+    </ol>
+
+    <h3>🧭 Safari</h3>
+    <ol style="padding-left: 20px; line-height: 2;">
+      <li>Safari → Preferências → Privacidade</li>
+      <li>Clique em "Gerenciar dados de sites"</li>
+      <li>Selecione sites específicos ou clique em "Remover todos"</li>
+      <li>Confirme</li>
+    </ol>
+
+    <h3>📱 Dispositivos Móveis</h3>
+    <p>Em smartphones e tablets, o processo é similar. Vá nas configurações do navegador e procure por "Privacidade" ou "Limpar dados".</p>
+  </div>
+
+  <!-- Cookies e Dispositivos Móveis -->
+  <div class="content-card">
+    <h2><span class="icon-large">📱</span> Cookies em Aplicativos Móveis</h2>
+    <p>É importante entender: <strong>aplicativos móveis nativos não usam cookies da mesma forma que sites</strong>.</p>
+    
+    <p>Apps usam tecnologias similares mas diferentes:</p>
+    <ul class="modern-list">
+      <li>
+        <strong>Armazenamento Local:</strong> Dados salvos diretamente no dispositivo
+      </li>
+      <li>
+        <strong>IDs de Publicidade:</strong> IDFA (iOS) e AAID (Android) para rastreamento de anúncios
+      </li>
+      <li>
+        <strong>SDKs de Terceiros:</strong> Ferramentas integradas que coletam dados
+      </li>
+      <li>
+        <strong>Tokens de Sessão:</strong> Para manter você logado
+      </li>
+    </ul>
+
+    <p>Você pode gerenciar essas tecnologias nas configurações de privacidade do seu dispositivo:</p>
+    <ul class="modern-list">
+      <li><strong>iOS:</strong> Ajustes → Privacidade → Rastreamento → Desativar "Permitir Rastreamento"</li>
+      <li><strong>Android:</strong> Configurações → Google → Anúncios → Desativar personalização de anúncios</li>
+    </ul>
+  </div>
+
+  <!-- Mitos Comuns -->
+  <div class="content-card">
+    <h2><span class="icon-large">💭</span> Mitos e Verdades Sobre Cookies</h2>
+    
+    <h3>❌ MITO: "Cookies podem me espionar através da webcam"</h3>
+    <p>✅ <strong>VERDADE:</strong> Impossível. Cookies são arquivos de texto passivos. Acesso à webcam requer permissões explícitas do navegador.</p>
+
+    <h3>❌ MITO: "Devo deletar todos os cookies diariamente"</h3>
+    <p>✅ <strong>VERDADE:</strong> Desnecessário e inconveniente. Você perderia logins, preferências e teria que reconfigurar tudo constantemente.</p>
+
+    <h3>❌ MITO: "Modo anônimo me deixa completamente invisível online"</h3>
+    <p>✅ <strong>VERDADE:</strong> Parcialmente correto. Modo anônimo não salva cookies após a sessão, mas seu provedor de internet, sites visitados e administradores de rede ainda podem ver sua atividade.</p>
+
+    <h3>❌ MITO: "Aceitar cookies de um site dá acesso total aos meus dados"</h3>
+    <p>✅ <strong>VERDADE:</strong> Não. Cada site só acessa os cookies que ele mesmo criou. Sites não podem ler cookies de outros sites.</p>
+
+    <h3>❌ MITO: "Cookies são ilegais"</h3>
+    <p>✅ <strong>VERDADE:</strong> Cookies são totalmente legais. O que a lei exige é transparência e consentimento informado.</p>
+
+    <h3>❌ MITO: "VPN bloqueia todos os cookies"</h3>
+    <p>✅ <strong>VERDADE:</strong> Não. VPN oculta seu IP, mas os cookies ainda são armazenados normalmente no seu navegador.</p>
+  </div>
+
+  <!-- Futuro dos Cookies -->
+  <div class="content-card">
+    <h2><span class="icon-large">🔮</span> O Futuro dos Cookies</h2>
+    <p>O mundo dos cookies está mudando rapidamente:</p>
+    
+    <h3>🚫 Fim dos Cookies de Terceiros</h3>
+    <p>Navegadores principais estão eliminando suporte para cookies de terceiros:</p>
+    <ul class="modern-list">
+      <li><strong>Safari:</strong> Já bloqueia por padrão desde 2020</li>
+      <li><strong>Firefox:</strong> Bloqueia por padrão desde 2019</li>
+      <li><strong>Chrome:</strong> Planeja eliminar em 2024/2025 (várias vezes adiado)</li>
+    </ul>
+
+    <h3>🆕 Alternativas Emergentes</h3>
+    <ul class="modern-list">
+      <li>
+        <strong>Privacy Sandbox (Google):</strong> APIs que prometem publicidade sem rastreamento individual
+      </li>
+      <li>
+        <strong>FLoC/Topics API:</strong> Agrupamento de usuários por interesses sem identificação individual
+      </li>
+      <li>
+        <strong>Server-Side Tracking:</strong> Rastreamento feito no servidor, não no navegador
+      </li>
+      <li>
+        <strong>Fingerprinting:</strong> Identificação baseada em características únicas do dispositivo (controverso)
+      </li>
+    </ul>
+
+    <h3>📊 Tendências</h3>
+    <ul class="modern-list">
+      <li>Mais transparência e controle para usuários</li>
+      <li>Regulamentações mais rígidas (GDPR, LGPD, CCPA)</li>
+      <li>Foco em dados primários (first-party data)</li>
+      <li>Consentimento granular (escolher exatamente quais cookies aceitar)</li>
+      <li>Tecnologias que preservam privacidade por design</li>
+    </ul>
+  </div>
+
+  <!-- Compromisso -->
+  <div class="commitment-box">
+    <h2>🤝 Nosso Compromisso com Você</h2>
+    <p><strong>Transparência é inegociável.</strong></p>
+    <p>Na Nova Geração RH, usamos cookies apenas quando necessário e sempre com seu consentimento informado.</p>
+    <p>✅ Nunca vendemos seus dados<br>
+    ✅ Minimizamos coleta ao essencial<br>
+    ✅ Respeitamos suas escolhas<br>
+    ✅ Mantemos você informado sobre mudanças</p>
+    <p><strong>Você está no controle. Sempre.</strong></p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="content-card">
+    <h2><span class="icon-large">❓</span> Perguntas Frequentes</h2>
+    
+    <h3>📌 "Posso usar o site sem aceitar cookies?"</h3>
+    <p>Sim, mas apenas com cookies essenciais (necessários para funcionar). Você pode rejeitar cookies opcionais, mas algumas funcionalidades podem não estar disponíveis.</p>
+
+    <h3>📌 "Cookies expiram automaticamente?"</h3>
+    <p>Sim! Cada cookie tem uma data de expiração. Cookies de sessão expiram ao fechar o navegador. Cookies persistentes expiram após o período definido pelo site.</p>
+
+    <h3>📌 "Cookies consomem muito espaço no meu dispositivo?"</h3>
+    <p>Não. Cookies são minúsculos - geralmente alguns bytes ou kilobytes. Mesmo centenas de cookies ocupam menos espaço que uma única foto.</p>
+
+    <h3>📌 "Posso ver quais cookies um site armazenou?"</h3>
+    <p>Sim! Na maioria dos navegadores: F12 → Application/Armazenamento → Cookies. Você verá todos os cookies do site atual.</p>
+
+    <h3>📌 "Cookies deixam meu computador lento?"</h3>
+    <p>Não significativamente. Cookies são pequenos e processados rapidamente. Se seu navegador está lento, o problema provavelmente é outro.</p>
+
+    <h3>📌 "Preciso aceitar cookies toda vez que visito um site?"</h3>
+    <p>Não. O próprio site usa um cookie para lembrar que você já aceitou (irônico, não é?). Se você deletar cookies, precisará aceitar novamente.</p>
+
+    <h3>📌 "Cookies funcionam se eu estiver offline?"</h3>
+    <p>Sim, para funcionalidades locais. Mas o site não pode enviar novos cookies ou receber informações sem conexão.</p>
+  </div>
+
+  <!-- Como Exercer Seus Direitos -->
+  <div class="content-card">
+    <h2><span class="icon-large">⚖️</span> Seus Direitos em Relação a Cookies</h2>
+    <p>Sob a LGPD, você tem direitos claros sobre seus dados, incluindo aqueles coletados via cookies:</p>
+    
+    <ul class="modern-list">
+      <li>
+        <strong>✅ Direito de Consentimento:</strong> Decidir se aceita ou não cookies não essenciais
+      </li>
+      <li>
+        <strong>📋 Direito de Informação:</strong> Saber exatamente quais cookies usamos e por quê
+      </li>
+      <li>
+        <strong>🗑️ Direito de Exclusão:</strong> Deletar seus cookies a qualquer momento
+      </li>
+      <li>
+        <strong>🚫 Direito de Oposição:</strong> Rejeitar cookies de rastreamento ou marketing
+      </li>
+      <li>
+        <strong>🔄 Direito de Revogação:</strong> Mudar de ideia sobre consentimento dado anteriormente
+      </li>
+      <li>
+        <strong>📊 Direito de Acesso:</strong> Ver quais dados foram coletados sobre você
+      </li>
+    </ul>
+
+    <h3>📧 Como Exercer Seus Direitos</h3>
+    <p>Entre em contato conosco:</p>
+    <ul class="modern-list">
+      <li><strong>E-mail:</strong> privacidade@novaGeracaoRH.com</li>
+      <li><strong>DPO:</strong> dpo@novaGeracaoRH.com</li>
+      <li><strong>Telefone:</strong> (51) 99338-1495 | (51) 99697-6579</li>
+    </ul>
+  </div>
+
+  <!-- Links Úteis -->
+  <div class="official-links">
+    <h3>🔗 Links Úteis e Recursos</h3>
+    <p>Aprenda mais sobre cookies e privacidade online:</p>
+    
+    <a href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer">
+      🏛️ ANPD - Autoridade Nacional de Proteção de Dados
+    </a>
+    
+    <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer">
+      📜 LGPD - Lei Geral de Proteção de Dados
+    </a>
+    
+    <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">
+      🌐 Google - Como Gerenciar Cookies no Chrome
+    </a>
+    
+    <a href="https://support.mozilla.org/pt-BR/kb/protecao-aprimorada-contra-rastreamento-firefox-desktop" target="_blank" rel="noopener noreferrer">
+      🦊 Mozilla - Proteção Contra Rastreamento
+    </a>
+    
+    <a href="https://www.aboutcookies.org/" target="_blank" rel="noopener noreferrer">
+      🍪 AboutCookies.org - Guia Completo (Inglês)
+    </a>
+    
+    <a href="https://allaboutcookies.org/" target="_blank" rel="noopener noreferrer">
+      📚 AllAboutCookies - Recursos Educacionais
+    </a>
+  </div>
+
+  <!-- Glossário -->
+  <div class="content-card">
+    <h2><span class="icon-large">📖</span> Glossário de Termos</h2>
+    <p>Vocabulário útil para entender cookies e privacidade online:</p>
+    
+    <ul class="modern-list">
+      <li>
+        <strong>First-Party Cookies:</strong> Cookies criados pelo site que você está visitando
+      </li>
+      <li>
+        <strong>Third-Party Cookies:</strong> Cookies criados por domínios externos (anunciantes, analytics)
+      </li>
+      <li>
+        <strong>Session Cookie:</strong> Cookie temporário que expira ao fechar o navegador
+      </li>
+      <li>
+        <strong>Persistent Cookie:</strong> Cookie que permanece por um período definido
+      </li>
+      <li>
+        <strong>Tracking Cookie:</strong> Cookie usado para rastrear comportamento entre sites
+      </li>
+      <li>
+        <strong>Supercookie:</strong> Cookie mais difícil de deletar, armazenado em lugares incomuns
+      </li>
+      <li>
+        <strong>Zombie Cookie:</strong> Cookie que se regenera automaticamente após ser deletado
+      </li>
+      <li>
+        <strong>HTTP-Only Cookie:</strong> Cookie acessível apenas pelo servidor, não por JavaScript
+      </li>
+      <li>
+        <strong>Secure Cookie:</strong> Cookie transmitido apenas por conexões HTTPS criptografadas
+      </li>
+      <li>
+        <strong>SameSite Cookie:</strong> Atributo que controla quando cookies são enviados
+      </li>
+      <li>
+        <strong>Fingerprinting:</strong> Técnica de identificação sem usar cookies
+      </li>
+      <li>
+        <strong>Local Storage:</strong> Armazenamento no navegador, similar mas diferente de cookies
+      </li>
+    </ul>
+  </div>
+
+  <!-- Atualizações -->
+  <div class="content-card">
+    <h2><span class="icon-large">🔄</span> Atualizações desta Política</h2>
+    <p>Esta política de cookies é revisada regularmente para refletir mudanças em nossa prática, legislação ou tecnologias.</p>
+    
+    <p><strong>Última atualização:</strong> Outubro de 2025</p>
+    
+    <p>Quando fizermos alterações significativas, notificaremos você através de:</p>
+    <ul class="modern-list">
+      <li>Banner destacado no site</li>
+      <li>E-mail (se tivermos seu contato)</li>
+      <li>Notificação na próxima visita</li>
+    </ul>
+
+    <p>Recomendamos visitar esta página periodicamente para se manter informado.</p>
+  </div>
+
+  <!-- Compromisso Final -->
+  <div class="commitment-box">
+    <h2>🍪 Cookies com Consciência</h2>
+    <p>Na <strong>Nova Geração RH</strong>, acreditamos que tecnologia e privacidade podem (e devem) coexistir harmoniosamente.</p>
+    
+    <p>Usamos cookies para melhorar sua experiência, nunca para invadir sua privacidade.</p>
+    
+    <p><strong>Nossa promessa:</strong></p>
+    <p>✅ Transparência absoluta sobre o que coletamos<br>
+    ✅ Uso mínimo necessário de cookies<br>
+    ✅ Controle total nas suas mãos<br>
+    ✅ Segurança máxima dos seus dados<br>
+    ✅ Respeito incondicional às suas escolhas</p>
+    
+    <p style="margin-top: 30px; font-size: 1.3rem; font-weight: bold;">
+      🍪 Tecnologia com Ética. Navegação com Transparência. 🍪
+    </p>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p><strong>CNPJ:</strong>-/p>
+  <p><strong>Telefone:</strong>(51) 99697-6579</p>
+  <p><strong>E-mail:</strong> Exemplo@gmail.com</p>
+  <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
+
+<!-- Ícones de redes sociais -->
+<div class="plataformas-sociais">
+  <a href="https://www.facebook.com" target="_blank" class="social facebook">
+    <img src="facebook1.png" alt="Facebook">
+  </a>
+  <a href="https://www.instagram.com" target="_blank" class="social instagram">
+    <img src="instagram1.png" alt="Instagram">
+  </a>
+  <a href="https://www.linkedin.com" target="_blank" class="social linkedin">
+    <img src="linkedin1.png" alt="LinkedIn">
+  </a>
+  <a href="https://www.youtube.com" target="_blank" class="social youtube">
+    <img src="youtube1.png" alt="YouTube">
+  </a>
+</div>
+</footer>
+
+<div class="floatb-container">
+  <button class="floatb" id="floatb">
+    <img src="user.png" alt="Principal" width="30">
+  </button>
+
+  <div class="floatb-options" id="floatbOptions">
+    <a href="https://wa.me/5551993381495" target="_blank" class="floatb-btn">
+      <img src="whatsapp.png" alt="WhatsApp 1" width="24">
+    </a>
+    <a href="https://wa.me/5551996976579" target="_blank" class="floatb-btn">
+      <img src="whatsapp2.png" alt="WhatsApp 2" width="24">
+    </a>
+    <a href="tel:+5551993381495" class="floatb-btn">
+      <img src="ligação.png" alt="Ligar" width="24">
+    </a>
+    <a href="https://t.me/novageracaorh" target="_blank" class="floatb-btn">
+      <img src="telegrama.png" alt="Telegram" width="24">
+    </a>
+  </div>
+</div>
+
+
+<style>
+
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+</style>
+
+<script>
+function toggleDarkMode() {
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+
+  if (isDark) {
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+}
+
+
+window.onload = () => {
+  const theme = localStorage.getItem("theme");
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+
+  if (theme === "dark") {
+    body.classList.add("dark-mode");
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  } else {
+    button.textContent = "🌙";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownContent = document.querySelector(".dropdown-content");
+
+  if (dropdownToggle && dropdownContent) {
+    dropdownToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      dropdownContent.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!dropdownToggle.contains(e.target) && !dropdownContent.contains(e.target)) {
+        dropdownContent.classList.remove("show");
+      }
+    });
+  }
+});
+
+function toggleFloatbOptions() {
+  const options = document.getElementById('floatbOptions');
+  options.classList.toggle('show');
+}
+
+const floatb = document.getElementById('floatb');
+const floatbOptions = document.getElementById('floatbOptions');
+let timeout;
+
+floatb.addEventListener('click', () => {
+  floatbOptions.classList.add('show');
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    floatbOptions.classList.remove('show');
+  }, 3000);
+});
+
+window.onscroll = function() {
+  const btn = document.getElementById("scrollTopBtn");
+  if (!btn) return;
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+}
+</script>
+</body>
+
+</html>
+
+
+
+
+

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comunidade do Bem no WhatsApp | Grupos Profissionais e Networking</title>
+  <meta name="description" content="Participe da Comunidade do Bem no WhatsApp. Grupos especializados para vagas de emprego, networking, dicas de carreira e desenvolvimento profissional." />
+  <meta name="keywords" content="WhatsApp, grupos profissionais, comunidades de WhatsApp, networking, vagas de emprego, carreira, grupo de apoio, desenvolvimento profissional" />
+  <link rel="icon" type="image/png" href="lgoogle.png" />
+
+  <!-- Open Graph para redes sociais -->
+  <meta property="og:title" content="Comunidade do Bem no WhatsApp | Grupos Profissionais e Networking" />
+  <meta property="og:description" content="Junte-se a grupos de WhatsApp para vagas de emprego, dicas de carreira e networking profissional." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="link-da-imagem.jpg" />
+  <meta property="og:url" content="https://www.seusite.com.br" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Comunidade do Bem no WhatsApp | Grupos Profissionais e Networking" />
+  <meta name="twitter:description" content="Junte-se a grupos de WhatsApp para vagas de emprego, dicas de carreira e networking profissional." />
+  <meta name="twitter:image" content="link-da-imagem.jpg" />  <style>
+/* Base do layout original */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+  padding-top: 170px;
+}
+
+body.dark-mode {
+  background-color: #000004;
+  color: #ffffff;
+}
+
+/* Header fixo */
+.header-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #EFEFEF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header {
+  background-color: #EFEFEF;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  color: #EFEFEF;
+  font-size: 1.8rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.header-left img {
+  height: 280px;
+  width: auto;
+  display: block;
+  margin-top: 11px;
+}
+
+.header-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: auto;
+  text-align: center;
+}
+
+.titulo-desktop {
+  display: block;
+  font-size: 2.8rem;
+  color: #013241;
+  font-weight: bold;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+
+.titulo-mobile {
+  display: none;
+}
+
+#darkModeToggle {
+  background: none;
+  border: 2px solid #013241;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #013241;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+/* Navegação */
+nav {
+  background-color: #EFEFEF !important;
+  border-top: 2px solid #009AB2;
+  border-bottom: 2px solid #009AB2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+nav a,
+.dropdown > a {
+  text-decoration: none;
+  color: #009AB2;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+
+nav a:hover,
+.dropdown:hover > a,
+body.dark-mode nav a:hover,
+body.dark-mode .dropdown:hover > a {
+  color: #000000;      /* Texto preto */
+  background-color: #EFEFEF; /* Mantém o fundo cinza se quiser */
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+nav a.ativo {
+  color: #000000;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #EFEFEF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-align: left;
+  color: #009AB2;
+  font-weight: normal;
+  background-color: #EFEFEF;
+}
+
+.dropdown-content a:hover {
+  background-color: #EFEFEF;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Hero Section */
+.hero-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-whatsapp::before {
+  content: '💚';
+  position: absolute;
+  font-size: 15rem;
+  opacity: 0.1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-whatsapp h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-whatsapp p {
+  font-size: 1.3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container Principal */
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Cards de Grupos */
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.group-card {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+}
+
+.group-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: pulse 3s ease-in-out infinite;
+}
+.join-button {
+  position: relative;
+  z-index: 10; /* garante que o botão fique acima de outros elementos */
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none; /* remove sublinhado se quiser */
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0; }
+  50% { transform: scale(1.5); opacity: 1; }
+}
+
+.group-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+}
+
+.group-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.group-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.group-description {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin: 15px 0;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.join-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: white;
+  color: #25D366;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.join-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Content Cards */
+.content-card {
+  background: #EFEFEF;
+  border-radius: 15px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border-left: 5px solid #25D366;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.content-card h2 {
+  color: #013241;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.content-card h3 {
+  color: #25D366;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.content-card p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.content-card ul {
+  line-height: 2;
+  font-size: 1.1rem;
+}
+
+/* Stats Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 15px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  color: #ffffff !important;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Commitment Box */
+.commitment-box {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  padding: 50px;
+  border-radius: 15px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+}
+
+.commitment-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.commitment-box p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  background-color: #EFEFEF;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #007b8a;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+body.dark-mode footer {
+  background-color: #000004;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+footer small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
+}
+
+.plataformas-sociais {
+  margin-top: 30px;
+  text-align: center;
+  gap: 2px;
+}
+
+.plataformas-sociais a {
+  display: inline-block;
+  margin: 0 15px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  filter: none !important;
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+.plataformas-sociais a img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  filter: none !important;
+}
+
+/* Modo Escuro */
+body.dark-mode .header-nav-container {
+  background-color: #EFEFEF;
+}
+
+body.dark-mode header {
+  background-color: #EFEFEF;
+}
+
+body.dark-mode nav {
+  background-color: #EFEFEF !important;
+}
+
+body.dark-mode .dropdown-content {
+  background-color: #EFEFEF;
+}
+
+body.dark-mode .dropdown-content a {
+  background-color: #EFEFEF;
+  color: #007b8a;
+}
+
+body.dark-mode .dropdown-content a:hover {
+  background-color: #EFEFEF;
+}
+
+body.dark-mode #darkModeToggle {
+  border-color: #25D366;
+  color: #25D366;
+}
+
+body.dark-mode .content-card {
+  background-color: #1a1a1a;
+  border-left-color: #25D366;
+}
+
+body.dark-mode .content-card h2 {
+  color: #25D366;
+}
+
+body.dark-mode .content-card h3 {
+  color: #4aff8c;
+}
+
+body.dark-mode .content-card p,
+body.dark-mode .content-card ul,
+body.dark-mode .content-card li {
+  color: #ccc;
+}
+
+body.dark-mode footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+}
+
+body.dark-mode footer p,
+body.dark-mode footer small {
+  color: #ccc;
+}
+
+/* Ajuste global de espaçamento para textos e cards em mobile */
+@media (max-width: 768px) {
+  p, span, li, div, a, label {
+    word-spacing: -1px;   /* reduz o espaço entre palavras */
+    line-height: 1.3;      /* reduz espaçamento entre linhas */
+    letter-spacing: 0;     /* ajusta espaçamento entre letras se necessário */
+  }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  body {
+    padding-top: 0;
+  }
+
+  .titulo-desktop {
+    display: none !important;
+  }
+  
+  .titulo-mobile {
+    display: block !important;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .header-left img {
+    display: block;
+    margin: 30px auto 20px auto;
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+  }
+
+  .header-title-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.1rem 0;
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 3px 5px;
+  }
+
+  #darkModeToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+  }
+
+  .hero-whatsapp {
+    padding: 40px 20px;
+    margin-top: 165px;
+  }
+
+  .hero-whatsapp h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-whatsapp p {
+    font-size: 1rem;
+  }
+
+  .stats-container {
+    padding: 30px 15px;
+  }
+
+  .groups-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .group-card {
+    min-height: auto;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .content-card {
+    padding: 25px 20px;
+  }
+
+  .content-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .commitment-box {
+    padding: 30px 20px;
+  }
+
+  .commitment-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .plataformas-sociais a img {
+    width: 30px;
+    height: 30px;
+    margin: -5px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Menu de navegação fixo -->
+<div class="header-nav-container">
+<header>
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙</button>
+  <div class="header-left">
+    <img src="lg.png" alt="Logo Nova Geração RH" />
+    <div class="header-title-container">
+      <h1 class="titulo-desktop">Conectando Talentos</h1>
+    </div>
+  </div>
+</header>
+
+<nav>
+    <div class="dropdown">
+    <a href="javascript:void(0);" class="dropdown-toggle">SOBRE NÓS</a>
+    <div class="dropdown-content">
+      <a href="global.html">Página Global</a>
+      <a href="index.html">Início</a>
+      <a href="home.html">Bem-vindos</a>
+      <a href="cultura.html">Cultura</a>
+    </div>
+  </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">CARREIRA</a>
+      <div class="dropdown-content">
+        <a href="candidato.html">Candidato</a>
+        <a href="vagas.html">Vagas</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">ATENDIMENTO</a>
+      <div class="dropdown-content">
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+
+<div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">INFORMAÇÕES</a>
+      <div class="dropdown-content">
+        <a href="informacoes.html">Inforações Gerais</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="lgbt.html">LGBT+</a>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <a href="lgpd.html">Lei Geral de Proteção de Dados</a>
+        <a href="pcd.html">Pessoas com deficiência</a>
+      </div>
+    </div>
+
+ <div class="dropdown">
+      <a href="javascript:void(0);" class="dropdown-toggle">DESENVOLVIMENTO</a>
+      <div class="dropdown-content">
+        <a href="blog.html">Blog</a>
+        <a href="facebook.html">Comunidade Facebook</a>
+        <a href="comunidade.html">Comunidade WhatsApp</a>
+      </div>
+    </div>
+
+</nav>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-whatsapp">
+  <h1>💚 Comunidade do Bem - WhatsApp</h1>
+  <p>Uma comunidade criada para <strong>apoiar, conectar e impulsionar carreiras</strong>. Junte-se aos nossos 5 grupos especializados e faça parte de uma rede de pessoas que se ajudam!</p>
+</section>
+
+<!-- Conteúdo Principal -->
+<div class="stats-container">
+
+  <!-- Nossa Missão -->
+  <div class="commitment-box">
+    <h2>🎯 Nossa Missão</h2>
+    <p>Criar um <strong>espaço seguro e colaborativo</strong> onde profissionais possam compartilhar oportunidades, conhecimento e experiências</p>
+    <p>Acreditamos no poder da <strong>colaboração</strong> e no crescimento coletivo</p>
+    <p style="margin-top: 20px; font-size: 1.5rem;">💼 5 Grupos Especializados • 🤝 Ajuda Mútua • 🚀 Crescimento Profissional</p>
+  </div>
+
+  <!-- Os 5 Grupos -->
+  <div class="content-card">
+    <h2>📱 Conheça Nossos 5 Grupos</h2>
+    <p>Cada grupo foi criado com um propósito específico para atender diferentes necessidades da sua jornada profissional:</p>
+  </div>
+
+  <div class="groups-grid">
+    <!-- Grupo 1: Publicação de Vagas -->
+    <div class="group-card">
+      <div class="group-icon">💼</div>
+      <div class="group-title">Publicação de Vagas</div>
+      <div class="group-description">
+        Canal dedicado à divulgação de oportunidades de emprego. Um espaço colaborativo onde cada membro pode ajudar o outro compartilhando vagas reais e verificadas.
+      </div>
+      <a href="https://chat.whatsapp.com/DYAzEv7g6kN0oCq06c2bCL" target="_blank" rel="noopener noreferrer" class="join-button">
+        📲 ENTRAR NO GRUPO
+      </a>
+    </div>
+
+    <!-- Grupo 2: Currículo -->
+    <div class="group-card">
+      <div class="group-icon">📄</div>
+      <div class="group-title">Currículo</div>
+      <div class="group-description">
+        Aprenda a construir um currículo profissional, receba dicas valiosas e compartilhe seu CV. Conecte-se ao nosso site para ferramentas exclusivas de construção de currículo.
+      </div>
+      <a href="https://chat.whatsapp.com/DYAzEv7g6kN0oCq06c2bCL" target="_blank" rel="noopener noreferrer" class="join-button">
+        📲 ENTRAR NO GRUPO
+      </a>
+    </div>
+
+    <!-- Grupo 3: ATS -->
+    <div class="group-card">
+      <div class="group-icon">🤖</div>
+      <div class="group-title">Sistemas ATS</div>
+      <div class="group-description">
+        Descubra como funcionam os sistemas de rastreamento de candidatos (ATS) e aprenda a otimizar seu currículo para passar pelos filtros automatizados das empresas.
+      </div>
+      <a href="https://chat.whatsapp.com/LVW3PV53lQlF4PJat2384l" target="_blank" rel="noopener noreferrer" class="join-button">
+        📲 ENTRAR NO GRUPO
+      </a>
+    </div>
+
+    <!-- Grupo 4: LinkedIn -->
+    <div class="group-card">
+      <div class="group-icon">💼</div>
+      <div class="group-title">LinkedIn</div>
+      <div class="group-description">
+        Conecte-se com outros profissionais, aprenda a construir um perfil impactante no LinkedIn e expanda sua rede de contatos profissionais de forma estratégica.
+      </div>
+      <a href="https://chat.whatsapp.com/H6zhpf4sqC1KBbaG7NwmB1" target="_blank" rel="noopener noreferrer" class="join-button">
+        📲 ENTRAR NO GRUPO
+      </a>
+    </div>
+
+    <!-- Grupo 5: Chat Livre -->
+    <div class="group-card">
+      <div class="group-icon">💬</div>
+      <div class="group-title">Chat Livre Geral</div>
+      <div class="group-description">
+        Espaço descontraído para conversar sobre tudo! Networking, troca de experiências, dúvidas do dia a dia e muito mais. Um lugar para criar conexões genuínas.
+      </div>
+      <a href="https://chat.whatsapp.com/IuNLFXOdEZbLNFHq8GSDaV" target="_blank" rel="noopener noreferrer" class="join-button">
+        📲 ENTRAR NO GRUPO
+      </a>
+    </div>
+  </div>
+
+  <!-- Benefícios -->
+  <div class="content-card">
+    <h2>🌟 Por Que Participar?</h2>
+    
+    <h3>✅ Benefícios para Sua Carreira</h3>
+    <ul>
+      <li>💡 <strong>Acesso exclusivo a vagas</strong> compartilhadas pela comunidade</li>
+      <li>📚 <strong>Aprenda com profissionais experientes</strong> em recursos humanos</li>
+      <li>🤝 <strong>Network valioso</strong> com outros profissionais da região</li>
+      <li>🎯 <strong>Orientação personalizada</strong> sobre currículo e LinkedIn</li>
+      <li>🚀 <strong>Dicas de como se destacar</strong> nos processos seletivos</li>
+      <li>🔍 <strong>Entenda como funcionam os ATS</strong> e aumente suas chances</li>
+      <li>💬 <strong>Suporte da comunidade</strong> em todas as etapas da sua jornada</li>
+    </ul>
+
+    <h3>🔒 Ambiente Seguro e Respeitoso</h3>
+    <p>Todos os grupos são moderados para garantir um ambiente profissional, respeitoso e produtivo. Valorizamos a diversidade e o respeito mútuo entre todos os membros.</p>
+  </div>
+
+  <!-- Estatísticas -->
+  <div class="content-card">
+    <h2>📊 Nossa Comunidade em Números</h2>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">👥</div>
+      <div class="stat-number">5</div>
+      <div class="stat-label">Grupos Especializados</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">🤝</div>
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Colaboração</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">📱</div>
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Disponível</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">🎯</div>
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Foco em Resultados</div>
+    </div>
+  </div>
+
+  <!-- Regras da Comunidade -->
+  <div class="content-card">
+    <h2>📋 Regras da Comunidade</h2>
+    <p>Para manter um ambiente saudável e produtivo, pedimos que todos sigam estas diretrizes:</p>
+    
+    <ul>
+      <li>🤝 <strong>Respeito acima de tudo:</strong> Trate todos com cordialidade e profissionalismo</li>
+      <li>📌 <strong>Conteúdo relevante:</strong> Compartilhe apenas o que é pertinente ao tema de cada grupo</li>
+      <li>🚫 <strong>Sem spam:</strong> Proibido divulgação não autorizada de produtos ou serviços</li>
+      <li>✅ <strong>Vagas verificadas:</strong> Ao compartilhar vagas, certifique-se de que são reais</li>
+      <li>🙋 <strong>Ajude os outros:</strong> Compartilhe conhecimento e experiências</li>
+      <li>🔒 <strong>Privacidade:</strong> Respeite a privacidade dos demais membros</li>
+      <li>💡 <strong>Seja ativo:</strong> Participe, interaja e contribua com a comunidade</li>
+    </ul>
+  </div>
+
+  <!-- Call to Action Final -->
+  <div class="commitment-box">
+    <h2>🚀 Pronto para Impulsionar Sua Carreira?</h2>
+    <p>Faça parte da <strong>Comunidade do Bem</strong> e tenha acesso a oportunidades, conhecimento e uma rede de apoio profissional</p>
+    <p style="margin-top: 20px;">Escolha os grupos que mais fazem sentido para você e comece a fazer parte dessa transformação!</p>
+    <p style="margin-top: 30px; font-size: 1.4rem;">
+      💚 Colaboração • 🎯 Crescimento • 🤝 Apoio Mútuo
+    </p>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p><strong>CNPJ:</strong>-/p>
+  <p><strong>Telefone:</strong>(51) 99697-6579</p>
+  <p><strong>E-mail:</strong> Exemplo@gmail.com</p>
+  <small>&copy; 2026 Nova Geração RH. Todos os direitos reservados.</small>
+
+<!-- Ícones de redes sociais -->
+<div class="plataformas-sociais">
+  <a href="https://www.facebook.com/groups/empregosguaiba" target="_blank" class="social facebook">
+    <img src="facebook1.png" alt="Facebook">
+  </a>
+  <a href="https://www.instagram.com" target="_blank" class="social instagram">
+    <img src="instagram1.png" alt="Instagram">
+  </a>
+  <a href="https://www.linkedin.com" target="_blank" class="social linkedin">
+    <img src="linkedin1.png" alt="LinkedIn">
+  </a>
+  <a href="https://www.youtube.com" target="_blank" class="social youtube">
+    <img src="youtube1.png" alt="YouTube">
+  </a>
+</div>
+</footer>
+
+<script>
+ 
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Dark mode
+  const body = document.body;
+  const button = document.getElementById("darkModeToggle");
+  
+  function toggleDarkMode() {
+    body.classList.toggle("dark-mode");
+    const isDark = body.classList.contains("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    if (isDark) {
+      button.textContent = "☀️";
+      button.style.color = "#013241";
+      button.style.borderColor = "#013241";
+    } else {
+      button.textContent = "🌙";
+      button.style.color = "#013241";
+      button.style.borderColor = "#013241";
+    }
+  }
+
+  button.addEventListener("click", toggleDarkMode);
+
+  // Carregar tema salvo
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    button.textContent = "☀️";
+    button.style.color = "#013241";
+    button.style.borderColor = "#013241";
+  }
+
+  // Dropdowns
+  const toggles = document.querySelectorAll(".dropdown-toggle");
+  toggles.forEach(t => {
+    t.addEventListener("click", e => {
+      e.stopPropagation();
+      document.querySelectorAll(".dropdown-content").forEach(dc => dc.classList.remove("show"));
+      t.nextElementSibling.classList.toggle("show");
+    });
+  });
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".dropdown-content").forEach(dc => dc.classList.remove("show"));
+  });
+
+  // Animação dos cards
+  const cards = document.querySelectorAll('.group-card');
+  cards.forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    setTimeout(() => {
+      card.style.transition = 'all 0.6s ease';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, 100 + i * 100);
+  });
+
+  // Botões do WhatsApp
+  document.querySelectorAll('.join-button').forEach(button => {
+    button.addEventListener('click', e => {
+      e.stopPropagation(); // importante para não interferir com dropdown
+      window.open(button.href, '_blank');
+    });
+  });
+});
+</script>
+
+
