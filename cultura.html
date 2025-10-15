@@ -49,19 +49,19 @@ body {
 }
     
 /* Cards Desktop: evitar espaçamento exagerado */
-/* Ajuste de espaçamento para desktop nos cards de valores */
 @media (min-width: 769px) {
   .cards-grid .card p {
-    line-height: 1.4;      /* espaçamento entre linhas menor e mais natural */
-    margin-bottom: 10px;   /* distância entre parágrafos mais curta */
-    font-size: 1.05rem;    /* mantém legível, ajustável se quiser menor */
+    text-align: left;    /* remove justificação e espaçamento irregular */
+    line-height: 1.4;    /* ajusta espaçamento entre linhas */
+    margin-bottom: 10px; /* espaço entre parágrafos */
+    word-spacing: normal; /* garante que não haja espaçamento extra entre palavras */
   }
 
   .cards-grid .card h2 {
-    margin-bottom: 8px;    /* espaço entre título e texto mais compacto */
+    text-align: left;    /* títulos também alinhados à esquerda */
+    margin-bottom: 8px;
   }
 }
-
 
 body.dark-mode {
   background-color: #000004;
