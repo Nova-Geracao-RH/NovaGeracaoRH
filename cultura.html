@@ -48,17 +48,15 @@ body {
   }
 }
     
-/* Corrige espaçamento entre palavras no desktop (página Cultura) */
+/* Cards Desktop: evitar espaçamento exagerado */
 @media (min-width: 769px) {
   .card p,
-  .card-mvv p,
-  .cultura-texto p,
-  .hero-cultura p {
-    text-align: left;       /* impede que o navegador justifique o texto */
-    word-spacing: normal;   /* remove espaçamento exagerado entre palavras */
-    letter-spacing: normal; /* remove espaçamento entre letras */
-    line-height: 1.4;       /* reduz o espaço vertical entre linhas */
-    white-space: normal;    /* garante quebra de linha natural */
+  .card-mvv p {
+    text-align: left;       /* não justificar */
+    word-spacing: normal;
+    letter-spacing: normal;
+    line-height: 1.5;       /* menos espaçamento entre linhas */
+    margin-bottom: 15px;    /* espaço entre parágrafos, se houver mais de um */
   }
 }
 
